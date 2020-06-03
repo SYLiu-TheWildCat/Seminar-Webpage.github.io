@@ -1,0 +1,91 @@
+<!-- #+OPTIONS: tex:dvipng -->
+<!DOCTYPE html>
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <style>
+        h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-indent: 2em;
+        }
+        h2.section{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            font-size: small;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-left: 2em;
+        }
+        div.definition{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            color: yellowgreen;
+            margin-left: 2em;
+        }
+        b.textbf{
+            font-weight: bold;
+            margin-right: 0ex;
+            color: royalblue;
+        }
+        div.theorem{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            color: orange;
+            margin-left: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. Introduction.</h1>
+    <p>In this chapter, we are going to give introductions to the Riemann-Roch theorem. This would be divided into two parts. The first part is a brief survey to the classical version of Riemann-Roch theorem without a rigorous proof, and the second part is an introduction to the main motivation for us to develop such a modified version of Riemann-Roch theorem. This comes from Floer theory, where we need to determine the dimension of spaces of solutions to certain non-linear partial differential equations. The second part would also includes no proofs since there would be a long way to go. But I will present some references so interested audiences can refer to them for more details.</p>
+    
+    <p id="1a"><h2 class="section">1a) Classical Version of Riemann-Roch Theorem.</h2>Let \((\Sigma ,j)\) be a Riemann surface with almost complex structure \(j\). Let \(\mathcal{O}_{\Sigma}\) be the sheaf of holomorphic functions on \(\Sigma\), and \(\mathcal{O}_{\Sigma}^{\ast }\) the sheaf of everywhere non-zero holomorphic functions on \(\Sigma\), then we have the following exponential sequence:
+    $$
+        1\to\underline{\mathbb{Z}}\to\mathcal{O}_{\Sigma}\xrightarrow{\exp}\mathcal{O}_{\Sigma}^{\ast }\to 1.
+    $$
+One can prove that on each open subset \(U\subseteq\Sigma\) the corresponding group \(\mathcal{O}_{\Sigma} (U)\) is an integral domain, hence we can consider the corresponding quotient ring \(\mathcal{M}_{\Sigma }\) and the multiplicative group \(\mathcal{M}_{\Sigma }^{\ast }\). There is an obvious inclusion \(\mathcal{M}_{\Sigma }^{\ast }\hookrightarrow\mathcal{M}_{\Sigma }\).</p>
+
+    <p id="1.1"><div class="definition">1.1. Definition.</div> A <b class="textbf">divisor</b> on \(\Sigma\) is a formal sum of discrete points on \(\Sigma\). That is, a divisor \(D\) can be written of the form \(D=\displaystyle\sum_{p\in\Sigma}n_p p\), where \(n_p\in\mathbb{Z}\) and \(n_p=0\) for a discrete set of points \(p\).</p>
+
+    <p>Let \(\mathrm{Div} (\Sigma )\) be the abelian group of divisors(with addition as the formal sum). Notice that for each open subset \(U\subseteq\Sigma\), we can form the group \(\mathrm{Div} (U)\) with essentially the same definition, and there is a natural surjective group homomorphism \(\mathrm{Div} (\Sigma )\to\mathrm{Div} (U)\), hence the assignment \(\mathcal{Div}\colon U\mapsto\mathrm{Div} (U)\) forms a sheaf. Then we have the following exact sequence
+        $$
+            1\to\mathcal{M}_{\Sigma}^{\ast }\to\mathcal{M}_{\Sigma}\to\mathcal{Div}_{\Sigma}\to\mathcal{Pic} (\Sigma)\to 1.
+        $$
+        We call the global section of the sheaf \(\mathcal{Pic} (\Sigma)\), written \(\mathrm{Pic} (\Sigma)\), the <b class="textbf">Picard group</b> of \(\Sigma\).
+    </p>
+
+    <p>Now for a given divisor \(D\), we can assign a locally free sheaf
+        $$
+        \mathcal{O}_X (D)\colon U\mapsto\{f\in\mathcal{M}_{\Sigma} (U)\vert (f)+D\geq 0\},
+        $$
+        where \((f)\) is the image of \(\mathcal{M}_{\Sigma}(U)\) that sends any point \(p\) to the formal element \(n_pp\), where \(n_p\) is the order of zeros of \(f\) at \(p\)(and if this number is negative, it is minus the order of poles of \(f\)). It can be easily verified that
+    </p>
+
+    <p id="1.2"><div class="definition">1.2. Lemma.</div>Two sheaves \(\mathcal{O}_{\Sigma} (D)\) and \(\mathcal{O}_{\Sigma} (E)\) are isomorphic if and only if \(D\sim E\), i.e. the two divisors represent the same equivalent classes in the Picard group \(\mathcal{Pic} (\Sigma )\).</p>
+
+    The global section \(\Gamma (\Sigma ,\mathcal{O}_{\Sigma} (D))\) is a \(\mathbb{C}\)-vector space, so we can set \(\ell (D)=\dim\Gamma (\Sigma ,\mathcal{O}_{\Sigma})\) to be the dimension of the vector space of global holomorphic sections of the sheaf associated to \(D\). Since \(\Sigma\) is a Riemann surface, the sheaf \(\Omega_{\Sigma}\) of holomorphic \(1\)-forms is also a locally free sheaf of rank \(1\), and from the result
+
+    <p id="1.3"><div class="theorem">1.3. Theorem.</div>There is an isomorphism from the abelian group \((I,\otimes)\) of invertible analytic sheaf(i.e. localy free \(\mathcal{O}_{\Sigma}\)-modules of rank \(1\)) and the Picard group.</p>
+
+    <p>we know that \(\Omega_{\Sigma}\) corresponds to some divisor \(K\), which is called the <b class="textbf">canonical divisor</b> of \(\Sigma\).</p>
+
+    <p>A final obstruction to the Riemann-Roch theorem is an observation. When \(\Sigma\) is compact, then the support of a divisor is a finite set of points, hence we can define the <b class="textbf">degree</b> of one such divisor \(D\) as \(\deg D=\displaystyle\sum_{p\in\Sigma} n_p\). Now we can state the Riemann-Roch theorem.</p>
+
+    <p id="classical Riemann-Roch Theorem"><div class="theorem">1.4. Theorem(Riemann-Roch).</div>Assume that \((X,j)\) is a compact Riemann surface with complex structure \(j\) and genus \(g\), \(D\) is a divisor on \(X\), then we have the following identity
+    $$
+    \ell (D)-\ell (K-D)=\deg D-g+1.
+    $$
+</p>
+
+<p>This gives a correspondence between the algebraic index(the dimension of vector spaces of holomorphic sections, or the vector space of algebraic sections of a line bundle, as well as the degree of this divisor) and the topological index(the genus of the Riemann surface \(\Sigma\)). We can use it to derive many results. For a quick example, we can determine the space of holomorphic sections of some given line bundle over a compact Riemann surface, or we can pick special divisors for a special Riemann surface and use this to compute its genus. For different purposes, people try to generlize the Riemann-Roch theorem in different ways. A main approach is to generlize it to higher dimensions and then from absolute version to relative version, which is known as the Grothendieck and Hirzebruch-Riemann-Roch theorem. In this seminar we are aiming to introduce another version of Riemann-Roch theorem, which relates the Fredholm index of an elliptic operator to the characteristic number and the genus of the compact Riemann surface with boundary. For readers who want to go into more details of this classical theorem, they can refer to [<a href="seminar-Riemann-Roch.html#Ki92">6</a>,<a href="seminar-Riemann-Roch.html#Sc00">7</a>].</p>
+
+<p id="1b"><h2 class="section" >1b) Transversality in Floer Theory.</h2></p>
+</body>
