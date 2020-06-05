@@ -18,6 +18,7 @@
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             }
         </style>
+        <link rel="stylesheet" type="text/css" href="button.css">
     </head>
     <h1>Online Seminar on Riemann-Roch Theorem</h1>
     <p>I would like to organize an online seminar on Riemann-Roch theorem in June, 2020, which would be a discussion of appendix C in Mcduff and Salamon's book [<a href="#MS12">1</a>].</p>
@@ -40,13 +41,21 @@
         <li>Let \(X\) be a complex manifold and \(E\to X\) a complex vector bundle over \(X\). Try to give one definition(you can state very briefly the construction of it) of the total Chern class \(c(E)\).(If you only know the first Chern class, just write the construction of the first Chern class.)</li>
     </ol>
     People who want to send me a registration email later than June 1st should send emails along with answers to these questions, as well as a list of all available or unavailable times in a week.
-    <h2>5. Table of Contents.</h2>
+    <h2>5. Seminar Notes.</h2>
     <ul>
-        <li><a href="1.Introduction.html"><span>&#8544</span>. Introduction.</a></li>
-        <ul>
-            <li><a href="1.Introduction.html#1a">1a) Classical Version Riemann-Roch Theorem.</a></li>
-            <li><a href="1.Introduction.html#1b">1b) Transversality in Floer Theory.</a></li>
-        </ul>
+        <li><div>
+            <input type="checkbox" id="toggle" class="unfolder" />
+            <label for="toggle" class="toggle-label"><span class="unfold-icon">&#9654;</span><span
+                    class="fold-icon">&#9660;</span> <a href="1.Introduction.html">
+                    <font color="yellowgreen"><span>&#8544</span>. Introduction.
+                </a></font></label>
+            <div class="fold">
+                <ul>
+                    <li><a href="1.Introduction.html#1a">1a) Classical Version Riemann-Roch Theorem.</a></li>
+                    <li><a href="1.Introduction.html#1b">1b) Transversality in Floer Theory.</a></li>
+                </ul>
+            </div></div></li>
+        
     </ul>
     <hr>
     <h2>References</h2>
@@ -61,6 +70,10 @@
             <li><a href="https://books.google.de/books/about/Introduction_to_characteristic_classes_a.html?id=Ep-7AQAACAAJ&redir_esc=y" id="Sc00">Schneiders, J.-P. (2000). Introduction to characteristic classes and index theory: Jean-Pierre Schneiders. Faculdade de
             ciências.</a></li>
             <li><a href="https://link.springer.com/book/10.1007/978-1-4471-5496-9" id="Au14">Audin, M., & Damian, M. (2014). Morse Theory and Floer Homology. Springer, London. doi: 10.1007/978-1-4471-5496-9</a></li>
+            <li><a href="https://projecteuclid.org/euclid.jdg/1214437492" id="Wi82">Witten, E. (1982). Supersymmetry and Morse theory. Journal of Differential Geometry, 17(4), 661–692. doi:
+            10.4310/jdg/1214437492</a></li>
+            <li><a href="https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/spectral-asymmetry-and-riemannian-geometry-i/5F898B61D95B9AD69D64385AFCC0E911?__cf_chl_jschl_tk__=7d8ae16d59d51717c738c65753f2ab4e65b48d32-1591365969-0-AR5pramlER9xk-lArhu6PD83_JvFliar1uES2xXMdssgLYXhAVKYJ3cmYLZPeZUnGyFKRr4iBxKeiEpXPvLyGS5Qm6YmURWLHtNl20SNyAjrjcK2tm-lUF2V-zznIVJWPZhFTD2IS6NnEQZLLVUnI29MIXl9f-rnW_flaS6EbYiOPRGHA8bb8ynbckmfqoS9IeDTZq7zHZq0wHJfOQzs7oe0E7uS9kK8OKjcrYPBSP30sd3Vq3k1aV5l5q7LNSKDjrVdnp4EUcYgvcR9kmeGkTmpeQV072EpUx5y-xpm5lqmaB53FN3sj02H2t4kNb-AKEYK37JS9XdmJZrLuPFf2yd0wJWF3k6lQcwNKWkSM2P8yDR9CGoevShkdYTKLol6dB-lcoqidIdfa06Cs7VVVEdM_wyYAkDTA_IWKLoaNa90ag_uJnyqgL7_y4Dw11TKC1wDrdhVtCz9h0L8_jfJMitddVpc5cAWwMoTSPy_98q3DDlzHufXqeLfqAFek68q49T5SRRFL4GZTsc0QtxUF4UP6CCzhdO3ybDDTJmEXseP" id="At75">Atiyah, M. F., Patodi, V. K., & Singer, I. M. (1975). Spectral asymmetry and Riemannian Geometry. I. Math. Proc.
+            Cambridge Philos. Soc., 77(1), 43–69. doi: 10.1017/S0305004100049410</a></li>
         </ol>
     </body>
 </html>
