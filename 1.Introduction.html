@@ -4,51 +4,8 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     </script>
-    <style>
-        h1{
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: center;
-        }
-        p{
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-indent: 2em;
-        }
-        h2.section{
-            font-weight: bold;
-            margin-right: 2ex;
-            float: left;
-            font-size: medium;
-            margin-top: 0em;
-            margin-bottom: 0em;
-            margin-left: 2em;
-        }
-        div.definition{
-            font-weight: bold;
-            margin-right: 2ex;
-            float: left;
-            color: darkseagreen;
-            margin-left: 2em;
-        }
-        b.textbf{
-            font-weight: bold;
-            margin-right: 0ex;
-            color: royalblue;
-        }
-        div.theorem{
-            font-weight: bold;
-            margin-right: 2ex;
-            float: left;
-            color: orange;
-            margin-left: 2em;
-        }
-        body{
-            counter-reset: footnotes;
-        }
-        hr.new2{
-            border: 0.5px solid;
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="foootnote.css">
+    <link rel="stylesheet" type="text/css" href="article.css">
 </head>
 <body>
     <h1>1. Introduction.</h1>
@@ -93,6 +50,15 @@ One can prove that on each connected open subset \(U\subseteq X\) the correspond
 </p>
 
 <p>This gives a correspondence between the algebraic index(the dimension of vector spaces of holomorphic sections, or the vector space of algebraic sections of a line bundle, as well as the degree of this divisor) and the topological index(the genus of the Riemann surface \(X\)). We can use it to derive many results. For a quick example, we can determine the space of holomorphic sections of some given line bundle over a compact Riemann surface, or we can pick special divisors for a special Riemann surface and use this to compute its genus. For different purposes, people try to generlize the Riemann-Roch theorem in different ways. A main approach is to generlize it to higher dimensions and then from absolute version to relative version, which is known as the Grothendieck and Hirzebruch-Riemann-Roch theorem. In this seminar we are aiming to introduce another version of Riemann-Roch theorem, which relates the Fredholm index of an elliptic operator to the characteristic number and the genus of the compact Riemann surface with boundary. For readers who want to go into more details of this classical theorem, they can refer to [<a href="seminar-Riemann-Roch.html#Ki92">6</a>,<a href="seminar-Riemann-Roch.html#Sc00">7</a>].</p>
+
+<p><h3 class="subsection">Serre Duality</h3> An important related topic concerning Riemann-Roch theorem is the following Serre's duality theorem, which gives the isomorphism from one cohomology group to the dual of another cohomology group. Once we proved the finiteness of these cohomology groups, it would follow that the two original cohomology groups are isomorphic. Formally for Riemann surface, the theorem reads</p>
+
+<p><div class="theorem">1.5. Theorem(Serre Duality).</div>Assume \((X,j)\) is a compact Riemann surface, then there is an isomorphism
+$$
+    H^p (X,\mathcal{O}_X)\cong H^{1-p} (X,\Omega_X^1)^{\ast}\quad\text{and}\quad H^p (X,\Omega_X^1)\cong H^{1-p} (X,\mathcal{O}_X)^{\ast}.
+$$
+where \(p=0,1\).
+</p>
 
 <p id="1b"><h2 class="section" >1b) Transversality in Floer Theory.</h2>In order to introduce Floer theory, we must firstly give some basic concepts about symplectic geometry. We say a <b class="textbf">symplectic manifold</b> of dimension \(2n\) is a differential manifold \(X\) together with a differential \(2\)-form \(\omega\) which is non-degenerate, closed and nowhere vanishing. Let \(\phi\colon X\to Y\) be a smooth map between symplectic manifolds, we say it is a <b class="textbf">symplectomorphism</b> if it is a diffeomorphism and it pulls the symplectic \(2\)-form \(\omega_Y\) back to the symplectic \(2\)-form \(\omega_X\). An isotopy \(\phi_t\colon X\times [0,1]\to Y\) consisting of symplectomorphisms \(\phi_t\colon X\to Y\) for all \(t\) is called a <b class="textbf">symplectic isotopy</b>. A special type of symplectic isotopy is an exact one. That is, there exists a vector field \(\{X_t\}_{0\leq t\leq 1}\) such that
 $$

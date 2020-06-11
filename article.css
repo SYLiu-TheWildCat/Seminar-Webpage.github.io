@@ -1,0 +1,51 @@
+ h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-indent: 2em;
+        }
+        h2.section{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            font-size: medium;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-left: 2em;
+        }
+        div.definition{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            color: darkseagreen;
+            margin-left: 2em;
+        }
+        b.textbf{
+            font-weight: bold;
+            margin-right: 0ex;
+            color: royalblue;
+        }
+        div.theorem{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            color: orange;
+            margin-left: 2em;
+        }
+        body{
+            counter-reset: footnotes;
+        }
+        hr.new2{
+            border: 0.5px solid;
+        }
+        h3.subsection{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            font-size: medium;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-left: 2em;
+        }
