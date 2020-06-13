@@ -15,56 +15,50 @@
             margin-bottom: 0em;
             margin-left: 2em;
         }
-        div.definition{
-            font-weight: bold;
-            margin-right: 2ex;
+        div.s{
             float: left;
-            color: darkseagreen;
             margin-left: 2em;
+            margin-right: 2ex;
+            counter-increment: statement 1;
         }
-        div.lemma{
+        div.s.definition{
             font-weight: bold;
-            margin-right: 2ex;
-            float: left;
             color: darkseagreen;
-            margin-left: 2em;
+        }
+        div.s.theorem{
+            font-weight: bold;
+            color: orange;
+        }
+        div.s.lemma{
+            font-weight: bold;
+            color: darkseagreen;
         }
         b.textbf{
             font-weight: bold;
             margin-right: 0ex;
             color: royalblue;
         }
-        div.theorem{
-            font-weight: bold;
-            margin-right: 2ex;
-            float: left;
-            color: orange;
-            margin-left: 2em;
-        }
-        div.theorem::before{
-            counter-increment: statement +1;
+        div.s.theorem::before{
             content: "1." counter(statement) "." "Theorem";
         }
-        div.theore::after{
+        div.s.theorem::after{
             content: ".";
         }
-        div.definition::before{
-            counter-increment: statement +1;
+        div.s.definition::before{
             content: "1." counter(statement) "." "Definition";
         }
-        div.definition::after{
+        div.s.definition::after{
             content: ".";
         }
-        div.lemma::before{
-            counter-increment: statement +1;
+        div.s.lemma::before{
             content: "1." counter(statement) "." "Lemma";
         }
-        div.lemma::after{
+        div.s.lemma::after{
             content: ".";
         }
         body{
-            counter-reset: statement;
             counter-reset: footnotes;
+            counter-reset: statement;
         }
         hr.new2{
             border: 0.5px solid;

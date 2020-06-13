@@ -17,7 +17,7 @@
     $$
 One can prove that on each connected open subset \(U\subseteq X\) the corresponding group \(\mathcal{O}_X (U)\) is an integral domain, hence we can consider the corresponding ring of fractions \(\mathcal{M}_X\) and the multiplicative group \(\mathcal{M}_X^{\ast }\). There is an obvious inclusion \(\mathcal{O}_X^{\ast }\hookrightarrow\mathcal{M}_X\).</p>
 
-    <p id="1.1"><div class="definition"> </div> A <b class="textbf">divisor</b> on \(X\) is a global section of the quotient sheaf \(\mathcal{M}_X^{\ast}/\mathcal{O}_X^{\ast}\). That is, a divisor \(D\) can be written of the form \(D=\displaystyle\sum_{p\in\Sigma}n_p p\), where \(n_p\in\mathbb{Z}\) and \(n_p\neq 0\) for a discrete set of points \(p\).</p>
+    <p id="1.1"><div class="s definition"></div> A <b class="textbf">divisor</b> on \(X\) is a global section of the quotient sheaf \(\mathcal{M}_X^{\ast}/\mathcal{O}_X^{\ast}\). That is, a divisor \(D\) can be written of the form \(D=\displaystyle\sum_{p\in\Sigma}n_p p\), where \(n_p\in\mathbb{Z}\) and \(n_p\neq 0\) for a discrete set of points \(p\).</p>
 
     <p>We write \(\mathcal{Div}_X\) for the sheaf of divisors on \(X\). Intuitively, a divisor can be understood as equivalent classes of local meromorphic functions modulo everywhere non-zero holomorphic functions, and the integer \(n_p\) at each point \(p\in X\) denotes the number of zeros (if it is negative, then it is the number of poles) of some local meromorphic function.(Observe that multiplication by an invertible holomorphic function does not change this number). Then on global sections, we have the following exact sequence
         $$
@@ -33,17 +33,17 @@ One can prove that on each connected open subset \(U\subseteq X\) the correspond
         where \((f)\) is the image of \(\mathcal{M}_X(U)\) that sends any point \(p\) to the formal element \(n_pp\), where \(n_p\) is the order of zeros of \(f\) at \(p\)(and if this number is negative, it is minus the order of poles of \(f\)). It can be easily verified that
     </p>
 
-    <p id="1.2"><div class="lemma"> </div>Two sheaves \(\mathcal{O}_X (D)\) and \(\mathcal{O}_X (E)\) are isomorphic if and only if \(D\sim E\), i.e. the two divisors represent the same equivalent classes in the Picard group \(\mathcal{Pic} (X)\).</p>
+    <p id="1.2"><div class="s lemma"></div>Two sheaves \(\mathcal{O}_X (D)\) and \(\mathcal{O}_X (E)\) are isomorphic if and only if \(D\sim E\), i.e. the two divisors represent the same equivalent classes in the Picard group \(\mathcal{Pic} (X)\).</p>
 
     <p>The global section \(\Gamma (X,\mathcal{O}_X (D))\) is a \(\mathbb{C}\)-vector space, so we can set \(\ell (D)=\dim\Gamma (X,\mathcal{O}_X)\) to be the dimension of the vector space of global holomorphic sections of the sheaf associated to \(D\). Since \(X\) is a Riemann surface, the sheaf \(\Omega_X\) of holomorphic \(1\)-forms is also a locally free sheaf of rank \(1\), and from the result</p>
 
-    <p id="1.3"><div class="theorem"> </div>There is an isomorphism from the abelian group \((I,\otimes)\) of invertible analytic sheaf(i.e. localy free \(\mathcal{O}_X\)-modules of rank \(1\)) and the Picard group.</p>
+    <p id="1.3"><div class="s theorem"></div>There is an isomorphism from the abelian group \((I,\otimes)\) of invertible analytic sheaf(i.e. localy free \(\mathcal{O}_X\)-modules of rank \(1\)) and the Picard group.</p>
 
     <p>we know that \(\Omega_X\) corresponds to some divisor \(K\), which is called the <b class="textbf">canonical divisor</b> of \(X\).</p>
 
     <p>A final obstruction to the Riemann-Roch theorem is an observation. When \(X\) is compact, then the support of a divisor is a finite set of points, hence we can define the <b class="textbf">degree</b> of one such divisor \(D\) as \(\deg D=\displaystyle\sum_{p\in X} n_p\). Now we can state the Riemann-Roch theorem.</p>
 
-    <p id="classical Riemann-Roch Theorem"><div class="theorem">(Riemann-Roch).</div>Assume that \((X,j)\) is a compact Riemann surface with complex structure \(j\) and genus \(g\), \(D\) is a divisor on \(X\), then we have the following identity
+    <p id="classical Riemann-Roch Theorem"><div class="s theorem">(Riemann-Roch)</div>Assume that \((X,j)\) is a compact Riemann surface with complex structure \(j\) and genus \(g\), \(D\) is a divisor on \(X\), then we have the following identity
     $$
     \ell (D)-\ell (K-D)=\deg D-g+1.
     $$
@@ -53,7 +53,7 @@ One can prove that on each connected open subset \(U\subseteq X\) the correspond
 
 <p><h3 class="subsection">Serre Duality</h3> An important related topic concerning Riemann-Roch theorem is the following Serre's duality theorem, which gives the isomorphism from one cohomology group to the dual of another cohomology group. Once we proved the finiteness of these cohomology groups, it would follow that the two original cohomology groups are isomorphic. Formally for Riemann surface, the theorem reads</p>
 
-<p><div class="theorem" id="1.5">(Serre Duality).</div>Assume \((X,j)\) is a compact Riemann surface, then there is an isomorphism
+<p><div class="s theorem" id="1.5">(Serre Duality)</div>Assume \((X,j)\) is a compact Riemann surface, then there is an isomorphism
 $$
     H^p (X,\mathcal{O}_X)\cong H^{1-p} (X,\Omega_X^1)^{\ast}\quad\text{and}\quad H^p (X,\Omega_X^1)\cong H^{1-p} (X,\mathcal{O}_X)^{\ast}.
 $$
@@ -88,7 +88,33 @@ where \(J\) is a prescribed almost complex structure defined on \(X\), or we wou
 $$
 \nabla X(s)=X\otimes s+\alpha (X)s,
 $$
-where \(\alpha\in\Omega^1 (U)\) is the corresponding <b class="textbf">connection form</b> of \(\nabla\), that is, the section of the bundle \(\Omega^1 (\Sigma ,\mathrm{End} (E))\). Observe that</p>
+where \(\alpha\in\Omega^1 (U)\) is the corresponding <b class="textbf">connection form</b> of \(\nabla\), that is, the section of the bundle \(\Omega^1 (\Sigma ,\mathrm{End} (E))\).</p>
+
+<p>Now we consider the case of complex vector bundles over a Riemann surface(or a complex manifold)\(\Sigma\). In this case, by the existence of an almost complex structure \(j\) on \(\Sigma\), we can decompose the space \(\Omega^1 (\Sigma )\) of complex-valued differential \(1\)-forms into the direct sum \(\Omega^{1,0} (\Sigma )\oplus\Omega^{0,1} (\Sigma )\), and we define the differential operator \(\bar{\partial }\) to be the composition of the exterior differential \(\mathrm{d}\colon\Omega^0 (\Sigma )\to\Omega^1 (\Sigma )\) followed by the projection \(\Omega^1 (\Sigma )\to\Omega^{0,1} (\Sigma )\).</p>
+
+<p><div class="s definition" id="1.6"></div>A complex and smooth <b class="textbf">Cauchy-Riemann operator</b> is a differential operator \(D\) on the complex vector bundle \(E\to\Sigma\) such that for each \(f\in\Omega^0 (\Sigma )\) and \(s\in\Omega^0 (\Sigma ,E)\) we have the following Lebnitz rule
+$$
+D(f\otimes s)=f\otimes (Ds)+(\bar{\partial }f)\otimes s.
+$$</p>
+
+<p>We can construct Cauchy-Riemann operators via connections.</p>
+
+<p><div class="s definition" id="1.7"></div>Given a complex vector bundle \(E\to X\) over some differentiable manifold \(X\), then an <b class="textbf">hermitian structure</b> on \(E\) is a bilinear function \(h\colon\mathcal{E}\otimes\mathcal{E}\to\mathcal{A}_X \) such that it is an hermitian inner product on each fibre \(E_x\) for all \(x\in X\) and the complex structure \(J\) is orthogonal with respect to this hermitian inner product. Given such an hermitian inner product and suppose \(X=\Sigma\), there exists a connection \(\nabla\), called the <b class="textbf">hermitian connection</b> on \(E\), which is defined to be compactible with the hermitian structure \(h\). For such a connection, the complex anti-linear part \(\bar{\partial }^{\nabla} =(\nabla )^{(0,1)}\) is a Cauchy-Riemann operator on \(E\).</p>
+
+<p>Then it's an exercise that each Cauchy-Riemann operator comes from one such hermitian connection(with the given hermitian structure), hence we do not lose any information by choosing such an hermitian structure. Also note that an hermitian structure on any complex vector bundle always exists.</p>
+
+<p>Combined with a chosen hermitian structure on the Riemann surface \(\Sigma\), we obtain the <b class="textbf">Hodge-star operator</b> \(\star\) defined on \(\Omega^{\ast} (\Sigma )\) which maps a differential form \(\omega\) to its orthogonal complement \(\star\omega\), such that the wedge product \(\omega\wedge\star\omega\) gives the volume form \(\mathrm{dvol}_{\Sigma}\) on \(\Sigma\). With the hermitian inner product on \(E\) and the hermitian structure on \(T\Sigma\), we could then talking about \(L^2\)-inner products. For \(E\)-valued sections or differential forms \(s_1 ,s_2\), we define their \(L^2\)-product to be the integration
+$$
+\int_{\Sigma}\langle s_1 ,s_2 \rangle\mathrm{dvol}_{\Sigma},
+$$
+where the pair \(\langle -,-\rangle\) is the combination of the real part \(\mathrm{Re} h\) of \(h\) and the Hodge-star operator \(\star\). We use the real part instead of the whole hermitian inner product since we know that the real part is a Riemannian metric and, when concerning with real partial differential operators, it's more convenient(and more natural) to work with Riemannian metric than hermitian metric. This difference would be remarked later when we are doing explicit calculations.</p>
+
+<p>Now we have introduced all the necessary notions of defining the "dual operator" toward the Cauchy-Riemann operator \(\bar{\partial }^{\nabla}\), written by \(\bar{\partial }^{\nabla\ast}\). This is given explicitly via the formula
+    $$
+    \bar{\partial }^{\nabla\ast} =-\star\bar{\partial}^{\nabla}\star,
+    $$
+    and by a direct calculation we know that this is the <b class="textbf">formal adjoint operator</b> to \(\bar{\partial }^{\nabla }\) in the sense of this \(L^2\)-inner product. Also observe that this is the operator \(\Omega^{0,1} (\Sigma ,E)\to\Omega^0 (\Sigma ,E)\).
+</p>
 <hr class="new2">
 <footer>
     <ol>
