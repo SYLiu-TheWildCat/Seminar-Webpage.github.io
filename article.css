@@ -22,6 +22,13 @@
             color: darkseagreen;
             margin-left: 2em;
         }
+        div.lemma{
+            font-weight: bold;
+            margin-right: 2ex;
+            float: left;
+            color: darkseagreen;
+            margin-left: 2em;
+        }
         b.textbf{
             font-weight: bold;
             margin-right: 0ex;
@@ -34,7 +41,29 @@
             color: orange;
             margin-left: 2em;
         }
+        div.theorem::before{
+            counter-increment: statement +1;
+            content: "1." counter(statement) "." "Theorem";
+        }
+        div.theore::after{
+            content: ".";
+        }
+        div.definition::before{
+            counter-increment: statement +1;
+            content: "1." counter(statement) "." "Definition";
+        }
+        div.definition::after{
+            content: ".";
+        }
+        div.lemma::before{
+            counter-increment: statement +1;
+            content: "1." counter(statement) "." "Lemma";
+        }
+        div.lemma::after{
+            content: ".";
+        }
         body{
+            counter-reset: statement;
             counter-reset: footnotes;
         }
         hr.new2{

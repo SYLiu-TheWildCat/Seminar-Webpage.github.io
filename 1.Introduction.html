@@ -17,7 +17,7 @@
     $$
 One can prove that on each connected open subset \(U\subseteq X\) the corresponding group \(\mathcal{O}_X (U)\) is an integral domain, hence we can consider the corresponding ring of fractions \(\mathcal{M}_X\) and the multiplicative group \(\mathcal{M}_X^{\ast }\). There is an obvious inclusion \(\mathcal{O}_X^{\ast }\hookrightarrow\mathcal{M}_X\).</p>
 
-    <p id="1.1"><div class="definition">1.1. Definition.</div> A <b class="textbf">divisor</b> on \(X\) is a global section of the quotient sheaf \(\mathcal{M}_X^{\ast}/\mathcal{O}_X^{\ast}\). That is, a divisor \(D\) can be written of the form \(D=\displaystyle\sum_{p\in\Sigma}n_p p\), where \(n_p\in\mathbb{Z}\) and \(n_p\neq 0\) for a discrete set of points \(p\).</p>
+    <p id="1.1"><div class="definition"> </div> A <b class="textbf">divisor</b> on \(X\) is a global section of the quotient sheaf \(\mathcal{M}_X^{\ast}/\mathcal{O}_X^{\ast}\). That is, a divisor \(D\) can be written of the form \(D=\displaystyle\sum_{p\in\Sigma}n_p p\), where \(n_p\in\mathbb{Z}\) and \(n_p\neq 0\) for a discrete set of points \(p\).</p>
 
     <p>We write \(\mathcal{Div}_X\) for the sheaf of divisors on \(X\). Intuitively, a divisor can be understood as equivalent classes of local meromorphic functions modulo everywhere non-zero holomorphic functions, and the integer \(n_p\) at each point \(p\in X\) denotes the number of zeros (if it is negative, then it is the number of poles) of some local meromorphic function.(Observe that multiplication by an invertible holomorphic function does not change this number). Then on global sections, we have the following exact sequence
         $$
@@ -33,17 +33,17 @@ One can prove that on each connected open subset \(U\subseteq X\) the correspond
         where \((f)\) is the image of \(\mathcal{M}_X(U)\) that sends any point \(p\) to the formal element \(n_pp\), where \(n_p\) is the order of zeros of \(f\) at \(p\)(and if this number is negative, it is minus the order of poles of \(f\)). It can be easily verified that
     </p>
 
-    <p id="1.2"><div class="definition">1.2. Lemma.</div>Two sheaves \(\mathcal{O}_X (D)\) and \(\mathcal{O}_X (E)\) are isomorphic if and only if \(D\sim E\), i.e. the two divisors represent the same equivalent classes in the Picard group \(\mathcal{Pic} (X)\).</p>
+    <p id="1.2"><div class="lemma"> </div>Two sheaves \(\mathcal{O}_X (D)\) and \(\mathcal{O}_X (E)\) are isomorphic if and only if \(D\sim E\), i.e. the two divisors represent the same equivalent classes in the Picard group \(\mathcal{Pic} (X)\).</p>
 
     <p>The global section \(\Gamma (X,\mathcal{O}_X (D))\) is a \(\mathbb{C}\)-vector space, so we can set \(\ell (D)=\dim\Gamma (X,\mathcal{O}_X)\) to be the dimension of the vector space of global holomorphic sections of the sheaf associated to \(D\). Since \(X\) is a Riemann surface, the sheaf \(\Omega_X\) of holomorphic \(1\)-forms is also a locally free sheaf of rank \(1\), and from the result</p>
 
-    <p id="1.3"><div class="theorem">1.3. Theorem.</div>There is an isomorphism from the abelian group \((I,\otimes)\) of invertible analytic sheaf(i.e. localy free \(\mathcal{O}_X\)-modules of rank \(1\)) and the Picard group.</p>
+    <p id="1.3"><div class="theorem"> </div>There is an isomorphism from the abelian group \((I,\otimes)\) of invertible analytic sheaf(i.e. localy free \(\mathcal{O}_X\)-modules of rank \(1\)) and the Picard group.</p>
 
     <p>we know that \(\Omega_X\) corresponds to some divisor \(K\), which is called the <b class="textbf">canonical divisor</b> of \(X\).</p>
 
     <p>A final obstruction to the Riemann-Roch theorem is an observation. When \(X\) is compact, then the support of a divisor is a finite set of points, hence we can define the <b class="textbf">degree</b> of one such divisor \(D\) as \(\deg D=\displaystyle\sum_{p\in X} n_p\). Now we can state the Riemann-Roch theorem.</p>
 
-    <p id="classical Riemann-Roch Theorem"><div class="theorem">1.4. Theorem(Riemann-Roch).</div>Assume that \((X,j)\) is a compact Riemann surface with complex structure \(j\) and genus \(g\), \(D\) is a divisor on \(X\), then we have the following identity
+    <p id="classical Riemann-Roch Theorem"><div class="theorem">(Riemann-Roch).</div>Assume that \((X,j)\) is a compact Riemann surface with complex structure \(j\) and genus \(g\), \(D\) is a divisor on \(X\), then we have the following identity
     $$
     \ell (D)-\ell (K-D)=\deg D-g+1.
     $$
@@ -53,7 +53,7 @@ One can prove that on each connected open subset \(U\subseteq X\) the correspond
 
 <p><h3 class="subsection">Serre Duality</h3> An important related topic concerning Riemann-Roch theorem is the following Serre's duality theorem, which gives the isomorphism from one cohomology group to the dual of another cohomology group. Once we proved the finiteness of these cohomology groups, it would follow that the two original cohomology groups are isomorphic. Formally for Riemann surface, the theorem reads</p>
 
-<p><div class="theorem">1.5. Theorem(Serre Duality).</div>Assume \((X,j)\) is a compact Riemann surface, then there is an isomorphism
+<p><div class="theorem" id="1.5">(Serre Duality).</div>Assume \((X,j)\) is a compact Riemann surface, then there is an isomorphism
 $$
     H^p (X,\mathcal{O}_X)\cong H^{1-p} (X,\Omega_X^1)^{\ast}\quad\text{and}\quad H^p (X,\Omega_X^1)\cong H^{1-p} (X,\mathcal{O}_X)^{\ast}.
 $$
@@ -82,7 +82,13 @@ where \(J\) is a prescribed almost complex structure defined on \(X\), or we wou
 
 <p>In this seminar we are aiming to introduce another approach to explicitly calculating this dimension. This is somwhat a generalization to the classical Riemann-Roch theorem introduced in the previous section, from compact Riemann surfaces to compact Riemann surfaces with boundaries, and from line bundles to general complex vector bundles pairing with a subbundle on the boundary, and from "complex index" to "real index".</p>
 
-<h2 class="section" id="1c">1c) The Generalized Riemann-Roch Theorem</h2>Now we are going to introduce the generalized Riemann-Roch theorem that fits into our motivation. Let \((\Sigma,j)\) a compact Riemann surface with boundary \(\partial \Sigma\) and almost complex structure \(j\colon T\Sigma\to T\Sigma\)(Note that in this case, \(T\Sigma\vert_{\partial \Sigma}\) is also a complex vector space, so we have a well-defined notion of almost complex structures.) Let \(E\to \Sigma\) be a complex vector bundle over \(\Sigma\) with complex structure \(J\). We write \(\Omega^i (\Sigma)\) for the vector space of differential \(k\)-forms on \(\Sigma\), and \(\Omega^{p,q} (\Sigma)\) the vector space of differential forms of type \(p,q\). Given a differentiable complex vector bundle \(E\), we write \(\Omega^{p,q} (\Sigma,E)\) and \(\Omega^k (\Sigma,E)\) to be the vector space of all differential forms with values in \(E\). For a brief summary of definitions toward these differential forms and differential operators, one can refer to [<a href="seminar-Riemann-Roch.html#Ra04">11</a>, Chapter 2]. 
+<h2 class="section" id="1c">1c) The Generalized Riemann-Roch Theorem</h2>Now we are going to introduce the generalized Riemann-Roch theorem that fits into our motivation. Let \((\Sigma,j)\) a compact Riemann surface with boundary \(\partial \Sigma\) and almost complex structure \(j\colon T\Sigma\to T\Sigma\)(Note that in this case, \(T\Sigma\vert_{\partial \Sigma}\) is also a complex vector space, so we have a well-defined notion of almost complex structures.) Let \(E\to \Sigma\) be a complex vector bundle over \(\Sigma\) with complex structure \(J\). We write \(\Omega^i (\Sigma)\) for the vector space of differential \(k\)-forms on \(\Sigma\), and \(\Omega^{p,q} (\Sigma)\) the vector space of differential forms of type \(p,q\). Given a differentiable complex vector bundle \(E\), we write \(\Omega^{p,q} (\Sigma,E)\) and \(\Omega^k (\Sigma,E)\) to be the vector space of all differential forms with values in \(E\). A <b class="textbf">first order differential operator</b> on \(E\) is a section of the tensor product \(\mathcal{E}\otimes\mathcal{D}^1\), where \(\mathcal{E}\) is the sheaf of smooth sections of \(E\), and \(\mathcal{D}^1\) is the sheaf of Lie algebras with sections of the form \(X+f\), where \(f\) a smooth function and \(X\) a vector field. If we say a differential operator \(D\) is <b class="textbf">homogeneous</b>, we mean the operator belongs to the tangent sheaf \(\mathcal{T}\). For a brief summary of definitions toward these differential forms and differential operators, one can refer to [<a href="seminar-Riemann-Roch.html#Ra04">11</a>, Chapter 2]. 
+
+<p>An important class of examples of such a differential operator are constructed via <b class="textbf">connections</b> on \(E\), which is defined as an \(\mathcal{A}_{\Sigma}\)-linear map \(\mathcal{E}\to\mathcal{E}\otimes\Omega^1_{\Sigma} \), or equivalently, a global section of the bundle \(\Omega^1 (\Sigma ,\mathrm{End} (E))\). Notice that fix a vector field \(X\in\Gamma (\Sigma ,\mathcal{T}_{\Sigma} )\) and a connection \(\nabla\), we can associate a differential operator \(\nabla X\) such that for each \(U\subseteq\Sigma\) open and \(s\in\mathcal{E} (U)\),
+$$
+\nabla X(s)=X\otimes s+\alpha (X)s,
+$$
+where \(\alpha\in\Omega^1 (U)\) is the corresponding <b class="textbf">connection form</b> of \(\nabla\), that is, the section of the bundle \(\Omega^1 (\Sigma ,\mathrm{End} (E))\). Observe that</p>
 <hr class="new2">
 <footer>
     <ol>
