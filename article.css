@@ -1,9 +1,9 @@
  h1{
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Comic Sans', Geneva, Verdana, sans-serif;
             text-align: center;
         }
         p{
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Comic Sans', Geneva, Verdana, sans-serif;
             text-indent: 2em;
         }
         h2.section{
@@ -23,7 +23,7 @@
         }
         div.s.definition{
             font-weight: bold;
-            color: darkseagreen;
+            color: orange;
         }
         div.s.theorem{
             font-weight: bold;
@@ -31,34 +31,36 @@
         }
         div.s.lemma{
             font-weight: bold;
-            color: darkseagreen;
+            color: palevioletred;
+        }
+        div.s.remark{
+            font-weight: bold;
+            color: palevioletred;
         }
         b.textbf{
             font-weight: bold;
             margin-right: 0ex;
             color: royalblue;
         }
-        div.s.theorem::before{
-            content: "1." counter(statement) "." "Theorem";
+        p.proof{
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-left: 0em;
         }
-        div.s.theorem::after{
-            content: ".";
+        p.proof::before{
+            color: orangered;
+            font-weight: bold;
+            font-size: medium;
+            content: "Proof. ";
         }
-        div.s.definition::before{
-            content: "1." counter(statement) "." "Definition";
-        }
-        div.s.definition::after{
-            content: ".";
-        }
-        div.s.lemma::before{
-            content: "1." counter(statement) "." "Lemma";
-        }
-        div.s.lemma::after{
-            content: ".";
+        p.proof::after{
+            float: right;
+            content: "Q.E.D.";
         }
         body{
             counter-reset: footnotes;
             counter-reset: statement;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Comic Sans', Geneva, Verdana, sans-serif;
         }
         hr.new2{
             border: 0.5px solid;

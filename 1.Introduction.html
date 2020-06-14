@@ -6,6 +6,32 @@
     </script>
     <link rel="stylesheet" type="text/css" href="foootnote.css">
     <link rel="stylesheet" type="text/css" href="article.css">
+    <style>
+        div.s.theorem::before{
+            content: "1." counter(statement) "." "Theorem";
+        }
+        div.s.theorem::after{
+            content: ".";
+        }
+        div.s.definition::before{
+            content: "1." counter(statement) "." "Definition";
+        }
+        div.s.definition::after{
+            content: ".";
+        }
+        div.s.lemma::before{
+            content: "1." counter(statement) "." "Lemma";
+        }
+        div.s.lemma::after{
+            content: ".";
+        }
+        div.s.remark::before{
+            content: "1." counter(statement) "." "Remark";
+        }
+        div.s.remark::after{
+            content: ".";
+        }
+    </style>
 </head>
 <body>
     <h1>1. Introduction.</h1>
@@ -103,7 +129,7 @@ $$</p>
 
 <p>Then it's an exercise that each Cauchy-Riemann operator comes from one such hermitian connection(with the given hermitian structure), hence we do not lose any information by choosing such an hermitian structure. Also note that an hermitian structure on any complex vector bundle always exists.</p>
 
-<p>Combined with a chosen hermitian structure on the Riemann surface \(\Sigma\), we obtain the <b class="textbf">Hodge-star operator</b> \(\star\) defined on \(\Omega^{\ast} (\Sigma )\) which maps a differential form \(\omega\) to its orthogonal complement \(\star\omega\), such that the wedge product \(\omega\wedge\star\omega\) gives the volume form \(\mathrm{dvol}_{\Sigma}\) on \(\Sigma\). With the hermitian inner product on \(E\) and the hermitian structure on \(T\Sigma\), we could then talking about \(L^2\)-inner products. For \(E\)-valued sections or differential forms \(s_1 ,s_2\), we define their \(L^2\)-product to be the integration
+<p>For Riemann surface \(\Sigma\), the complex structure \(j\) together with a fixed volume form \(\mathrm{dvol}\) gives a suitable hermitian structure on \(T\Sigma\) and hence on its dual, so we have the <b class="textbf">Hodge-star operator</b> \(\star\) defined on \(\Omega^{\ast} (\Sigma )\) which maps a differential form \(\omega\) to its orthogonal complement \(\star\omega\). With the hermitian inner product on \(E\) and the volume form on \(T\Sigma\), we could then talking about \(L^2\)-inner products. For \(E\)-valued sections or differential forms \(s_1 ,s_2\), we define their \(L^2\)-product to be the integration
 $$
 \int_{\Sigma}\langle s_1 ,s_2 \rangle\mathrm{dvol}_{\Sigma},
 $$
@@ -115,6 +141,12 @@ where the pair \(\langle -,-\rangle\) is the combination of the real part \(\mat
     $$
     and by a direct calculation we know that this is the <b class="textbf">formal adjoint operator</b> to \(\bar{\partial }^{\nabla }\) in the sense of this \(L^2\)-inner product. Also observe that this is the operator \(\Omega^{0,1} (\Sigma ,E)\to\Omega^0 (\Sigma ,E)\).
 </p>
+
+<p><div class="s remark" ></div>In the case of a Riemann surface with boudary, the boundary data is involved in the definition of adjoint operators. That is, by calculating the integration, we will have the following formula
+$$
+\int_{\Sigma }\langle D^{\ast}s_1 ,s_2\rangle -\int_{\Sigma }\langle s_1 ,Ds_2\rangle =\int_{\partial\Sigma } \langle s_1 ,Js_2\rangle,
+$$
+and this coincides with the previous definition if and only if we have \(s_1\perp Js_2\) as vectors in \(E\).</p>
 
 <p>Let's do some local computations. Under a coordinate neighbourhood \((U,z)\) with \(z=s+it\) we have the corresponding differential operators \(\nabla_s\) and \(\nabla_t\) given by
     $$
@@ -140,11 +172,29 @@ $$
 $$
 Now we set \(W^{k,p}_F (\Sigma ;\bigwedge^p T^{\ast}\Sigma\otimes E)\) to be the associated Sobolev space of differential \(p\)-forms or \((p,q)\)-forms.
 
-<p><div class="s definition" id="1.8"></div>We set a <b class="textbf">real linear Cauchy-Riemann operator</b> on \((E,F)\) of class \(W^{k,p}\) to be the differential operator \(D=D_0 +\alpha \) where \(D_0\) is a smooth complex Cauchy-Riemann operator and \(\alpha\in W^{k,p} (\Sigma ,\bigwedge^{0,1} T^{\ast}\Sigma\otimes\mathrm{End}_{\mathbb{R}} (E))\).</p>
+<p><div class="s definition" id="1.8"></div>For given positive integer \(k\) and a real number \(p>1\) such that \(kp>2\), we set a <b class="textbf">real linear Cauchy-Riemann operator</b> on \((E,F)\) of class \(W^{k-1,p}\) to be the differential operator \(D=D_0 +\alpha \) where \(D_0\) is a smooth complex Cauchy-Riemann operator and \(\alpha\in W^{k-1,p} (\Sigma ,\bigwedge^{0,1} T^{\ast}\Sigma\otimes\mathrm{End}_{\mathbb{R}} (E))\).</p>
+
+<p>Here we must impose the condition \(kp>2\) because of the Sobolev embedding theorem, which states that only when \(kp>2\) can Sobolev spaces embedded into the space of continuous functions, so all sections are continuous. It's an exercise that for a given real linear Cauchy-Riemann operator \(D\), we have</p>
+
+<p><div class="s lemma" id="1.9"></div>Any real linear Cauchy-Riemann operator of class \(W^{k-1, p}\) is gauge equivalent to some complex smooth Cauchy-Riemann operator.</p>
+
+<p>Then one who is familiar with functional analysis would expect that the Fredholm property is preserved when we replace such a non-smooth Cauchy-Riemann operator by the corresponding complex and smooth one.</p>
+
+<p>A final preparation is to compute the corresponding formal adjoint operator related to a given real-linear Cauchy-Riemann operator \(D_F\) of class \(W^{k-1,p}\) defined on a subspace \(W_F^{k,p} (\Sigma ,E)\). For the original one defined on the whole space without boundary conditions, we have done the computation, except for the real linear term \(\alpha\), but notice that under the \(L^2\)-inner product, the formal adjoint of this zero-order term \(\alpha\) is just the transpose \(\alpha^T\), so we have obtained the formal adjoint \(D^{\ast}_F \) as an operator defined on the space \(W^{k,p} (\Sigma ,E)\) of all sections of Sobolev type. When we impose boundary conditions, we have</p>
+
+<p><div class="s lemma" id="formal-adjointness"></div>For any \(\xi\in \Omega^0 (\Sigma ;E,F)\) and \(\eta\in \Omega^{0,1} (\Sigma ;E,F)\), we have
+$$
+\int_{\Sigma }\langle D_F^{\ast}\eta ,\xi\rangle\mathrm{dvol} =\int_{\Sigma }\langle\eta ,D_F\xi\rangle\mathrm{dvol}.
+$$</p>
+
+<p class="proof">We only need to verify the boundary conditions. Observe that in this case, since \(F\) is totally real, \(JF\) is orthogonal to \(F\) and therefore we have \(\xi\perp J\eta\) for any vector-valued differential forms \(\xi\) and \(\eta\) satisfying the given boundary condition.</p>
+
+<h3 class="subsection">The Generalized Riemann-Roch Theorem.</h3> With all these preparations, we would then give an explicit statement of the main theorem of this seminar. This main result consists of three parts, the first is the analytical part, which states that the Cauchy-Riemann operator constructed above has the Fredholm property, so we could associate an analytic index, the Fredholm index of this operator. The second statement relates this analytic index to the topological index concerning the Riemann surface \(\Sigma\) as well as the relative Chern number, i.e. the Maslov index of the bundle pairs \((E,F)\) and the Euler characteristic \(\chi (\Sigma)\). The last statement computes the index in the case when the relative Chern number is sufficiently large or sufficiently small. <a aria-describedby="footnote-label" href="#holomorphic or algebraic line bundle">This coincides with the usual application of Riemann-Roch theorem that tells us the degree of a divisor determines the existence of global sections over some holomorphic</a> line bundle.
 <hr class="new2">
 <footer>
     <ol>
         <li id="choice of a.c.s.">This should be more careful. In fact, in our case we can only show that encoded with a perturbation data of almost complex structures, the linearization on the product space is Fredholm. But then Sard-Smale theorem would tell us after a generic choice of almost complex structures, the linearization is surjective.</li>
+        <li id="holomorphic or algebraic line bundle">or algebraic, in AG setting. In fact, they are the same.</li>
     </ol>
 </footer>
 </body>
