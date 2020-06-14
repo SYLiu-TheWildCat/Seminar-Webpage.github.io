@@ -115,6 +115,32 @@ where the pair \(\langle -,-\rangle\) is the combination of the real part \(\mat
     $$
     and by a direct calculation we know that this is the <b class="textbf">formal adjoint operator</b> to \(\bar{\partial }^{\nabla }\) in the sense of this \(L^2\)-inner product. Also observe that this is the operator \(\Omega^{0,1} (\Sigma ,E)\to\Omega^0 (\Sigma ,E)\).
 </p>
+
+<p>Let's do some local computations. Under a coordinate neighbourhood \((U,z)\) with \(z=s+it\) we have the corresponding differential operators \(\nabla_s\) and \(\nabla_t\) given by
+    $$
+    \nabla_s =\partial_s +\Phi\quad\text{and}\quad\nabla_t =\partial_t +\Psi, 
+$$
+where \(\Phi\) and \(\Psi\) are corresponding endomorphisms in \(\mathfrak{u}(n)\). The Cauchy-Riemann operator reads
+$$
+\bar{\partial }^{\nabla}\xi=(\nabla)^{0,1} \xi=\frac{1}{2} (\nabla_s \xi+J\nabla_t \xi)\mathrm{d} s+\frac{1}{2} (\nabla_t \xi -J\nabla_s \xi )\mathrm{d} t,
+$$
+and the formal adjoint operator is given by
+$$
+\bar{\partial }^{\nabla\ast}\xi (\mathrm{d} s-i\mathrm{d} t)=\lambda^{-2} (-\nabla_s\xi +i\nabla_t\xi ),
+$$
+where \(\mathrm{dvol} =\lambda^2\mathrm{d} s\wedge\mathrm{d} t\) is the volume form on \(U\). Therefore this gives an explicit formula for the formal adjoint operator locally: for any \(\zeta\mathrm{d}\bar{z}\), we have \(\bar{\partial }^{\nabla\ast } (\zeta\mathrm{d}\bar{z} )=-2\lambda^{-2}\partial^{\nabla}\zeta\).</p>
+
+<h3 class="subsection">Real Linear Cauchy-Riemann Operator.</h3> Finally we reach our main object of discussion. We have defined and discussed the complex and smooth Cauchy-Riemann operator as a component of some hermitian connection, but what we meet with in Floer theory, or in pseudo-holomorphic curves is a slightly general one, which is real and non-smooth. Before that, let's discuss the boundary conditions. We say a subbundle \(F\subseteq E\) is <b class="textbf">totally real</b> if it is invariant under conjugation. In a symplectic vector space, for a Lagrangian subspace we can choose a proper compactible almost complex structure so that the Lagrangian subspace would be automatically totally real. We call a <b class="textbf">bundle pair</b> \((E,F)\) to be a pair consisting of a vector bundle \(E\to\Sigma\) over \(\Sigma\) and a totally real subbundle \(F\) over the boundary \(\partial\Sigma\). For this bundle pair, we define the corresponding space of differential forms to be
+$$
+\Omega^k (\Sigma ;E,F)=\{s\in\Omega^k (\Sigma ,E)\vert s\vert_{\partial\Sigma }\in\Omega^k (\Sigma ,F)\}
+$$
+and
+$$
+\Omega^{p,q} (\Sigma ;E,F)=\{s\in\Omega^{p,q} (\Sigma ,E)\vert s\vert_{\partial\Sigma }\in\Omega^{p,q} (\Sigma ,F)\}.
+$$
+Now we set \(W^{k,p}_F (\Sigma ;\bigwedge^p T^{\ast}\Sigma\otimes E)\) to be the associated Sobolev space of differential \(p\)-forms or \((p,q)\)-forms.
+
+<p><div class="s definition" id="1.8"></div>We set a <b class="textbf">real linear Cauchy-Riemann operator</b> on \((E,F)\) of class \(W^{k,p}\) to be the differential operator \(D=D_0 +\alpha \) where \(D_0\) is a smooth complex Cauchy-Riemann operator and \(\alpha\in W^{k,p} (\Sigma ,\bigwedge^{0,1} T^{\ast}\Sigma\otimes\mathrm{End}_{\mathbb{R}} (E))\).</p>
 <hr class="new2">
 <footer>
     <ol>
