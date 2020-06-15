@@ -19,23 +19,42 @@
             float: left;
             margin-left: 2em;
             margin-right: 2ex;
-            counter-increment: statement 1;
+            counter-increment: statement;
         }
         div.s.definition{
             font-weight: bold;
             color: orange;
         }
+        div.s.definition::after{
+            content: ".";
+        }
         div.s.theorem{
             font-weight: bold;
             color: orange;
+        }
+        div.s.theorem::after{
+            content: ".";
         }
         div.s.lemma{
             font-weight: bold;
             color: palevioletred;
         }
+        div.s.lemma::after{
+            content: ".";
+        }
         div.s.remark{
             font-weight: bold;
             color: palevioletred;
+        }
+        div.s.remark::after{
+            content: ".";
+        }
+        div.s.prp{
+            font-weight: bold;
+            color: palevioletred;
+        }
+        div.s.prp::after{
+            content: ".";
         }
         b.textbf{
             font-weight: bold;
@@ -55,7 +74,14 @@
         }
         p.proof::after{
             float: right;
-            content: "Q.E.D.";
+            content: "";
+            border: 1px black solid;
+            display: block;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
         }
         body{
             counter-reset: footnotes;

@@ -1,0 +1,55 @@
+<head>
+    <link type="text/css" rel="stylesheet" href="article.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style>
+        body{
+            counter-reset: subsection;
+            counter-increment: inherit;
+        }
+        h2.section::before{
+            counter-increment: subsection;
+            content: "A" counter(subsection, lower-alpha)")";
+        }
+        h2.section::after{
+            content: ".";
+        }
+        div.s.definition::before{
+            content: "A."counter(statement)". Definition";
+        }
+        div.s.prp::before{
+            content:"A."counter(statement)".Proposition";
+        }
+    </style>
+</head>
+<h1>Appendix. Q&A and Supplement Materials</h1>
+
+<p>This appendix serves as some supplement materials which will or will not be mentioned in talks, depending on their length of the whole context. Problems arising in talks that are not solved immediately would be stated and solved here.</p>
+
+<h2 class="section" id="hermitian connection">The hermitian connection</h2> In this section we are going to prove an equivalence between two different definitions of hermitian connections on an hermitian vector bundle. Let \(X\) be a differentiable manifold and \(E\to X\) an hermitian vector bundle over \(X\), then we have the hermitian inner product \(h\) defined on \(E\), which is called an hermitian structure in section <a href="1.Introduction.html#1c">1c)</a>.
+
+<p><div class="s definition"></div>An <b class="textbf">hermitian connection</b> on \(E\) is a connection \(\nabla\) such that it is compactible with the real inner product \(\mathrm{Re} h\) and is complex linear. In other words, if we write \(\langle -,-\rangle =\mathrm{Re} h(-,-)\), then the hermitian connection must satisfy the Lebnitz rule
+$$
+\mathrm{d}\langle s_1 ,s_2\rangle =\langle\nabla s_1 ,s_2\rangle +\langle s_1 ,\nabla s_2\rangle,
+$$
+and the additional requirement that \(\nabla (Js)=J\nabla s\) for all sections \(s\). Here the complex structure acts on the tensor bundle \(E\otimes T^{\ast} X\) by \(J\otimes\mathrm{id}\).</p>
+
+The main result of this section is the following
+
+<p><div class="s prp"></div>A connection \(\nabla\) on the hermitian vector bundle \(E\to X\) is an hermitian connection if and only if for any sections \(s_1 ,s_2\) on \(E\), we have
+$$
+\mathrm{d} h(s_1 ,s_2)=h(\nabla s_1 ,s_2 )+h(s_1 ,\nabla s_2).
+$$</p>
+
+<p class="proof">This follows from the following linear-algebraic fact: since the complex structure \(J\) on \(E\) is compactible with the hermitian structure \(h\), we have
+    $$
+    h(s_1 ,Js_2 )=-ih(s_1 ,s_2).
+    $$
+    Decompose \(h\) into a sum of real parts and imagine parts, and we write the imagine part to be a skew-symmetry form \(\omega\), then we have the relation
+    $$
+    \langle s_1 ,Js_2 \rangle =\omega (s_1 ,s_2);\quad\omega (s_1 ,Js_2)=-\langle s_1 ,s_2\rangle.
+    $$
+    Therefore when \(\nabla\) is hermitian, then it satisfies the Lebnitz rule for the hermitian inner product \(h\), and conversely, if \(\nabla\) satisfies the given Lebnitz rule for \(h\), by decomposing into real and imagine parts we know that the Lebnitz rule for the real part is also satisfied, and the complex linearity of \(\mathrm{d}\) implies the complex linearity of \(\nabla\).
+</p>
+
+<h2 class="section" id="adjoint operator">The formal adjoint operator</h2>In this section we show the reason why we impose such a condition on the boundary for the formal adjoint operator given on a manifold with boundary. This depends on a local computation, and the explanation is mainly based on Palais' seminar note [<a href="seminar-Riemann-Roch.html#Pa65">12</a>, Chapter 4].
