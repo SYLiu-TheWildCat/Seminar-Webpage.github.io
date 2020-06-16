@@ -20,7 +20,11 @@
         div.s.prp::before{
             content:"A."counter(statement)".Proposition";
         }
+        div.s.remark::before{
+            content: "A." counter(statement)".Remark";
+        }
     </style>
+    <link rel="stylesheet" type="text/css" href="foootnote.css">
 </head>
 <h1>Appendix. Q&A and Supplement Materials</h1>
 
@@ -54,7 +58,51 @@ $$</p>
 
 <h2 class="section" id="adjoint operator">The formal adjoint operator</h2>In this section we show the reason why we impose such a condition on the boundary for the formal adjoint operator given on a manifold with boundary. This depends on a local computation, and the explanation is mainly based on Palais' seminar note [<a href="seminar-Riemann-Roch.html#Pa65">12</a>, Chapter 4]. Recall that for a differentiable manifold \(M\) with boundary \(\partial M\), the local coordinate chart is modeled on the upper half-plane \(\mathbb{R}^n_+\), either lying completely inside this plane or having intersection with the boundary \(\mathbb{R}^{n-1}\). We just do the computation in this model space. Observe that we have
 
-<p><div class="s prp" id="local computation of adjoint operator"></div>Let \(E\to U\) be an hermitian vector bundle over \(U\) with hermitian structure \(h\), and let \(D\) be a differential operator of order \(k\) on \(E\), then there exists an adjoint operator \(D^{\ast}\) to \(D\) such that there exists a bilinear form \(G\) defined on the jet space \(J^{k-1} (\partial U)\), the \((k-1)\)-jet space on the boundary \(\partial U\), such that
+<p><div class="s prp" id="local computation of adjoint operator"></div>Let \(E\to U\) and \(F\to U\) be two hermitian vector bundles over \(U\) with hermitian structures \(h_1\) and \(h_2\), and let \(D\) be a differential operator of order \(k\) from \(E\) to \(F\), then there exists an adjoint operator \(D^{\ast}\colon\mathcal{C}^{\infty}_c (U,F)\to\mathcal{C}^{\infty}_c (U,E)\) to \(D\) such that there exists a sesqui-linear form \(G\) defined on the jet space \(J^{k-1} (E\vert_{\partial U})\) on the boundary \(\partial U\), such that
 $$
-\int_M\langle Ds_1 ,s_2\rangle -\int_M\langle s_1 ,D^{\ast} s_2\rangle =\int_{\partial U} G(j^{k-1} s_1 ,j^{k-1} s_2)\mathrm{d}x.
+\int_M h_1( Ds_1 ,s_2) -\int_Mh (s_1 ,D^{\ast} s_2)=\int_{\partial U} G(j^{k-1} s_1 ,j^{k-1} s_2)\mathrm{d}x.
 $$</p>
+
+<p>In this case, a differential operator is given by a matrix with values differential operators on \(\mathcal{C}^{\infty } (U)\), the sheaf of smooth functions on \(U\). To be more precise, it has the form
+    $$
+    D=\sum_{\vert\alpha\vert\leq k} C_{\alpha }D_{\alpha},
+    $$
+    where \(D_{\alpha}\) is the differential operator given by a composition of partial derivatives with multi-index \(\alpha\), and \(C_{\alpha}\) is a matrix for each \(\alpha\), with values in \(\mathcal{C}^{\infty } (U)\). Since \(U\) is a subspace of some Euclidean space, any vector bundle over \(U\) is trivial, and we can pick hermitian inner products \(\langle -,-\rangle_1\), \(\langle -,-\rangle_2\) on \(E\) and \(F\), respectively, independent of the choice of parameters, then the hermitian structure \(h_i\) can be represented by matrices \(A_i\) with values in \(\mathcal{C}^{\infty } (U)\), i.e. \(\langle -,-\rangle_i =h_i (A_i -,-)\). We set \(\rho\) and \(\sigma\) for the density function on \(U\) and its boundary representing the volume form given on some Riemannian manifold \(M\).
+</p>
+
+<p class="proof">This can be done by induction. <a aria-describedby="footnote-label" href="#order zero differential operator">We firstly consider the homogeneous first-order differential operator \(\frac{\partial }{\partial x_k}\) where \(1\leq k\leq n\)</a>, then by integration by parts, we have
+    $$
+    \frac{\partial }{\partial x_k}\langle s_1 ,s_2\rangle_1 =\langle\partial_k s_1 ,s_2\rangle_1 +\langle s_1 ,\partial_k s_2\rangle_1,
+    $$
+for each \(s_1 ,s_2\in\mathcal{C}^{\infty } (U,E)\). Integrate the above formula over \(U\), we obtain that
+$$
+\int_U\langle\partial_k s_1 ,s_2\rangle_1\mathrm{d}x -\int_U\langle s_1 ,-\partial_k s_2\rangle_1\mathrm{dx} =\left\{\begin{array}{ll}
+0,&1\leq k\leq n-1;\\
+\int_{\partial U}\langle s_1 ,s_2\rangle_1\mathrm{d}x',&k=n.
+\end{array}\right.
+$$
+Now we consider the general case. Firstly, for general differential operator \(D^{\alpha}\), we have
+$$
+\int_U\langle D^{\alpha} s_1 ,s_2\rangle_1\mathrm{d}x-\int_U\langle s_1 ,(-1)^{\vert\alpha\vert} D^{\alpha} s_2\rangle_1\mathrm{d} x=\int_{\partial U} G_{\alpha} (j_{k-1} s_1 ,j_{k-1} s_2)\mathrm{d} x',
+$$
+and when we impose the matrix \(C_{\alpha}\), with the corresponding adjoint operator \(C_{\alpha}'\) which satisfies the condition \(h_2 (C_{\alpha } s_1 ,s_2)=h_1 (s_1 ,C_{\alpha}'s_2)\), we have
+$$
+h_2 (Ds_1 ,s_2)=\langle B\sum_{\alpha} C_{\alpha} D^{\alpha} s_1 ,s_2\rangle_2 =\sum_{\alpha}\langle D^{\alpha} s_1 ,C_{\alpha}'B(-1)^{\vert\alpha\vert} s_2\rangle_1
+$$
+and hence via integration, we have(we set (-,-)_i to be the corresponding \(L^2\)-inner product on vector bundles \(E\) and \(F\), respectively.)
+$$
+(Df,g)_1 -\int_U\langle f,\sum_{\alpha} (-1)^{\vert\alpha\vert} D^{\alpha}(\rho C_{\alpha}' Bg)\rangle_1 =\int_{\partial U} G(j_{k-1} f,\bar{j}_{k-1} g)\mathrm{d}x'.
+$$
+where \(\bar{j}_{k-1} g=(j_{k-1} (\rho C_{\alpha}'Bg))_{\alpha}\) and \(G\) is the sum of all \(G_{\alpha}\)s. Now we can just define the adjoint operator \(D^{\ast}\) as
+$$
+D^{\ast} g=\sum_{\alpha} (-1)^{\vert\alpha\vert}\frac{1}{\rho} A^{-1} D^{\alpha} (\rho C_{\alpha}'Bg)=\sum_{\vert\alpha\vert\leq k}\left(\sum_{\alpha\leq\lambda} (-1)^{\vert\lambda\vert}\binom{\lambda}{\alpha}\frac{1}{\rho} A^{-1} D^{\lambda -\alpha} (\rho C_{\lambda}'B)\right)D^{\alpha} g,
+$$
+and this is just a differential operator of order \(k\) which satisfies the required identity.</p>
+
+<p><div class="s remark"></div>In our case, we are concerning differential operators on a single hermitian vector bundle \(E\to\Sigma\), so when two sections \(s_1 ,s_2\) satisfies \(s_1\perp s_2\) on the boundary, it follows automatically(from the construction of the proof) that the right-hand side concerning integration on the boundary vanishes, hence we have the "true adjointness" for Cauchy-Riemann operators.</p>
+<hr class="new">
+<footer>
+    <ol>
+        <li id="order zero differential operator">The case when the differential operator has order \(0\) is obvious.</li>
+    </ol>
+</footer>

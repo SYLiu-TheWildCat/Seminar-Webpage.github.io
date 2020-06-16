@@ -1,3 +1,7 @@
+body{
+  counter-reset: footnotes;
+}
+
 a[aria-describedby="footnote-label"] {
   counter-increment: footnotes; /* 1 */
   text-decoration: none; /* 2 */
