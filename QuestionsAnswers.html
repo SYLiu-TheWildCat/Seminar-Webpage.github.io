@@ -52,4 +52,9 @@ $$</p>
     Therefore when \(\nabla\) is hermitian, then it satisfies the Lebnitz rule for the hermitian inner product \(h\), and conversely, if \(\nabla\) satisfies the given Lebnitz rule for \(h\), by decomposing into real and imagine parts we know that the Lebnitz rule for the real part is also satisfied, and the complex linearity of \(\mathrm{d}\) implies the complex linearity of \(\nabla\).
 </p>
 
-<h2 class="section" id="adjoint operator">The formal adjoint operator</h2>In this section we show the reason why we impose such a condition on the boundary for the formal adjoint operator given on a manifold with boundary. This depends on a local computation, and the explanation is mainly based on Palais' seminar note [<a href="seminar-Riemann-Roch.html#Pa65">12</a>, Chapter 4].
+<h2 class="section" id="adjoint operator">The formal adjoint operator</h2>In this section we show the reason why we impose such a condition on the boundary for the formal adjoint operator given on a manifold with boundary. This depends on a local computation, and the explanation is mainly based on Palais' seminar note [<a href="seminar-Riemann-Roch.html#Pa65">12</a>, Chapter 4]. Recall that for a differentiable manifold \(M\) with boundary \(\partial M\), the local coordinate chart is modeled on the upper half-plane \(\mathbb{R}^n_+\), either lying completely inside this plane or having intersection with the boundary \(\mathbb{R}^{n-1}\). We just do the computation in this model space. Observe that we have
+
+<p><div class="s prp" id="local computation of adjoint operator"></div>Let \(E\to U\) be an hermitian vector bundle over \(U\) with hermitian structure \(h\), and let \(D\) be a differential operator of order \(k\) on \(E\), then there exists an adjoint operator \(D^{\ast}\) to \(D\) such that there exists a bilinear form \(G\) defined on the jet space \(J^{k-1} (\partial U)\), the \((k-1)\)-jet space on the boundary \(\partial U\), such that
+$$
+\int_M\langle Ds_1 ,s_2\rangle -\int_M\langle s_1 ,D^{\ast} s_2\rangle =\int_{\partial U} G(j^{k-1} s_1 ,j^{k-1} s_2)\mathrm{d}x.
+$$</p>
