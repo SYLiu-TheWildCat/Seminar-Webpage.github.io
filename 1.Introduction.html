@@ -21,6 +21,7 @@
         }
     </style>
 </head>
+<article>
 <body>
     <h1>1. Introduction.</h1>
     <p>In this chapter, we are going to give introductions to the Riemann-Roch theorem. This would be divided into two parts. The first part is a brief survey to the classical version of Riemann-Roch theorem without a rigorous proof, and the second part is an introduction to the main motivation for us to develop such a modified version of Riemann-Roch theorem. This comes from Floer theory, where we need to determine the dimension of spaces of solutions to certain non-linear partial differential equations. The second part would also includes no proofs since there would be a long way to go. But I will present some references so interested audiences can refer to them for more details.</p>
@@ -178,11 +179,22 @@ $$</p>
 <p class="proof">We only need to verify the boundary conditions. Observe that in this case, since \(F\) is totally real, \(JF\) is orthogonal to \(F\) and therefore we have \(\xi\perp J\eta\) for any vector-valued differential forms \(\xi\) and \(\eta\) satisfying the given boundary condition.</p>
 
 <h3 class="subsection">The Generalized Riemann-Roch Theorem.</h3> With all these preparations, we would then give an explicit statement of the main theorem of this seminar. This main result consists of three parts, the first is the analytical part, which states that the Cauchy-Riemann operator constructed above has the Fredholm property, so we could associate an analytic index, the Fredholm index of this operator. The second statement relates this analytic index to the topological index concerning the Riemann surface \(\Sigma\) as well as the relative Chern number, i.e. the Maslov index of the bundle pairs \((E,F)\) and the Euler characteristic \(\chi (\Sigma)\). The last statement computes the index in the case when the relative Chern number is sufficiently large or sufficiently small. <a aria-describedby="footnote-label" href="#holomorphic or algebraic line bundle">This coincides with the usual application of Riemann-Roch theorem that tells us the degree of a divisor determines the existence of global sections over some holomorphic</a> line bundle.
-<hr class="new2">
+
+<p><div class="s theorem">(Generalized Riemann-Roch)</div>Let \((E,F))\) be a bundle pair and \(D_F\) a real linear Cauchy-Riemann operator on \((E,F)\) of class \(W^{\ell -1,p}\) where \(\ell p>2\) and \(p>1\). Then the following holds for every integer \(k\in\{1,2,\dotsb,\ell\}\) and every real number \(q>1\) such that \(k-\frac{2}{q}\leq\ell -\frac{2}{p}\). 
+<ol class="thm">
+    <li>The operators \(D_F\colon W^{k,q}_F (\Sigma ,E)\to W^{k-1, q} (\Sigma ,\wedge^{0,1} T^{\ast}\Sigma\otimes E)\) and \(D_F^{\ast}\colon W_F^{k,q} (\Sigma ,\wedge^{0,1} T^{\ast}\Sigma\otimes E)\to W^{k-1,q} (\Sigma ,E)\) are Fredholm. Moreover, their kernels are independent of \(k\) and \(q\), and we have</li>
+    <div>$$
+        \eta\in\mathrm{im} D_F\Leftrightarrow\int_{\Sigma}\langle\eta,\eta_0\rangle\mathrm{dvol} =0\ \forall\eta_0\in\mathrm{ker} D_F^{\ast}
+        $$
+    </div>
+    for \(\eta\in W^{k-1,q} (\Sigma ,\wedge^{0,1} T^{\ast}\Sigma\otimes E)\) and
+</ol></p>
 <footer>
+    <h2 class="visually-hidden" id="footnote-label">Footnotes</h2>
     <ol>
         <li id="choice of a.c.s.">This should be more careful. In fact, in our case we can only show that encoded with a perturbation data of almost complex structures, the linearization on the product space is Fredholm. But then Sard-Smale theorem would tell us after a generic choice of almost complex structures, the linearization is surjective.</li>
         <li id="holomorphic or algebraic line bundle">or algebraic, in AG setting. In fact, they are the same.</li>
     </ol>
 </footer>
 </body>
+</article>
