@@ -108,3 +108,6 @@
         ol.thm li::before{
             content: "("counter(thmpart,lower-roman)")";
         }
+        a{
+            color: violet;
+        }
