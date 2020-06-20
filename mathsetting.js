@@ -4,7 +4,8 @@ window.MathJax = {
         macros: {
             im: "{\\mathrm {im}}",
             dvol: "{\\mathrm {dvol}}",
-            index: "{\\mathrm {index}}"
+            index: "{\\mathrm {index}}",
+            Hom: "{\\mathrm {Hom}}"
         }
     }
 };
