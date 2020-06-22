@@ -56,6 +56,13 @@
         div.s.prp::after{
             content: ".";
         }
+        div.s.crl{
+            font-weight: bold;
+            color: palevioletred;
+        }
+        div.s.crl::after{
+            content: ".";
+        }
         b.textbf{
             font-weight: bold;
             margin-right: 0ex;
@@ -110,4 +117,8 @@
         }
         a{
             color: violet;
+        }
+        article{
+            background-color: darkgreen;
+            color: white;
         }

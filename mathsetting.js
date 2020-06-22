@@ -5,7 +5,8 @@ window.MathJax = {
             im: "{\\mathrm {im}}",
             dvol: "{\\mathrm {dvol}}",
             index: "{\\mathrm {index}}",
-            Hom: "{\\mathrm {Hom}}"
+            Hom: "{\\mathrm {Hom}}",
+            diff: "{\\mathrm {d}}"
         }
     }
 };

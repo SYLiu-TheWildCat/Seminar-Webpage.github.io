@@ -22,6 +22,9 @@
         div.s.remark::before{
             content: "1." counter(statement) "." "Remark";
         }
+        div.s.crl::before{
+            content: "1." counter(statement) "." "Corollary";
+        }
     </style>
 </head>
 <article>
@@ -227,12 +230,67 @@ $$</p>
     It is not hard to verify that \(F_z^{\ast}\) is a totally real subbundle of \(E^{\ast}\). 
 </p>
 
-<p>The second work is to concern differential forms on \(E^{\ast}\). The \(\mathbb{C}\)-linear dual bundle \(\Hom (T\Sigma ,\mathbb{C} )\) of \(T\Sigma\) is the cotangent subbundle of \(T^{\ast}\Sigma\) consisting only of complex linear differential forms, and we set \(T^{1,0}\Sigma\) for this cotangent bundle. Then it follows that we have the tensor product \(T^{1,0}\Sigma\otimes E^{\ast}\cong\Hom (T\Sigma ,E^{\ast})\),</p>
+<p>The second work is to concern differential forms on \(E^{\ast}\). The \(\mathbb{C}\)-linear dual bundle \(\Hom (T\Sigma ,\mathbb{C} )\) of \(T\Sigma\) is the cotangent subbundle of \(T^{\ast}\Sigma\) consisting only of complex linear differential forms, and we set \(T^{1,0}\Sigma\) for this cotangent bundle. Then it follows that we have the tensor product \(T^{1,0}\Sigma\otimes E^{\ast}\cong\Hom (T\Sigma ,E^{\ast})\), and on the boundary \(\partial\Sigma\), we just have \(T^{1,0}\Sigma\otimes F^{\ast} =T^{1,0}\Sigma\otimes E^{\ast}\vert_{\partial\Sigma}\).</p>
+
+<p>We can then form the pairing 
+    $$
+    \Omega^0 (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast})\otimes\Omega^{0,1} (\Sigma ,E)\to\mathbb{C}
+    $$
+    by setting \((\xi ,\eta)\mapsto\displaystyle\int_{\Sigma}\xi\wedge\eta\). Likewise, when we consider the space of differential \((0,1)\)-forms with values in the vector bundle \(T^{1,0}\Sigma\otimes E^{ast}\), with the natural pairing \(E\otimes E^{\ast}\to\mathbb{C}\) we have the pairing
+    $$
+    \Omega^{0,1} (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast})\otimes\Omega^0 (\Sigma ,E)\to\mathbb{C},
+    $$
+    and the Riesz representation theorem for the \(L^2\)-inner product gives us the isomorphism from the first component to the dual of the second, assuming that they are complete Hilbert spaces with respect to the given \(L^2\)-inner product.
+</p>
+
+<p>But this is not the case, so we would like to go further looking at these pairings. A first remark on complex geometry is that</p>
+
+<p><div class="s theorem">([<a href="seminar-Riemann-Roch.html#Ko87">13</a>])</div>Any Cauchy-Riemann operator defined on a complex vector bundle \(E\to X\) over some complex manifold \(X\) determines a unique holomorphic structure on \(E\).</p>
+
+<p>In complex geometry setting, we require the Cauchy-Riemann operator to satisfy the condition \((\bar{\partial }^{\nabla })^2 =0\), which is trivial for Riemann surface. Thus any complex vector bundles \(E\) over a Riemann surface \(\Sigma\) are holomorphic.</p>
+
+<p>Then we could fix a holomorphic structure on \(E\) so that there exists a unique Cauchy-Riemann operator \(\bar{\partial}\) that is compactible with the holomorphic structure(i.e. this is the \((0,1)\)-part of a Chern connection). Then any other Cauchy-Riemann operator \(D\) can be then written as the sum
+    $$
+    D=\bar{\partial }+A\colon\Omega^0 (\Sigma ,E)\to\Omega^{0,1} (\Sigma ,E)
+    $$
+    where \(A\in\Gamma (\Sigma ,\mathfrak{u} (E)\otimes\wedge^{0,1}\Sigma)\) is an \(1\)-form with value in the Lie algebra \(\mathfrak{u} (E)\). The "dual operator" can then be written as
+    $$
+    D^{\ast} =-\bar{\partial} +A^{\ast}\colon\Omega^0 (\Sigma ,\wedge^{1,0}\Sigma\otimes E)\to\Omega^{0,1} (\Sigma ,\wedge^{1,0}\Sigma\otimes E). 
+    $$
+    Here the dual operator is not the same as what we have constructed before, but they are actually closely related. For any \(\xi\in\Omega^0 (\Sigma ,E)\) and \(\eta\in\Omega^{1,0} (\Sigma ,E^{\ast})=\Omega^0 (\Sigma ,E^{\ast}\otimes T^{1,0}\Sigma)\) we have
+    $$
+    D^{\ast}\eta\wedge\xi -\eta\wedge D\xi =\diff (\eta\wedge\xi )\in\Omega^{1,1} (\Sigma ),
+    $$
+    so via integration, we obtain that
+    \begin{equation}
+        \int_{\Sigma} (D^{\ast}\eta\wedge\xi -\eta\wedge D\xi )=\int_{\partial\Sigma}\eta\wedge\xi.\label{formula-adjoint-integration}
+    \end{equation}
+</p>
+
+<p><div class="s crl"></div>Assume \(D\) as constructed above with \(A\) of class \(W^{\ell -1,p}\) and the bundle pair \((E,F)\) defined as in theorem <a href="#generalized-Riemann-Roch">1.12</a>, then for any \(\eta\in L^r (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast} )\) with \(r>1\), the following two statements are equivalent:
+<ol class="thm">
+    <li>\(\int_{\Sigma }\eta\wedge D\xi\in\mathbb{R}\) for any \(\xi\in\Omega^0_F (\Sigma ,E)\);</li>
+    <li>\(\eta\) is of class \(W^{\ell ,p}\), \(D^{\ast}\eta =0\) and \(\eta (\partial\Sigma )\subseteq F\). In other words, \(\eta\in W_F^{\ell ,p} (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast})\).</li>
+</ol></p>
+
+<p>This theorem generalizes the Serre duality in the following sense: combining with generalized Riemann-Roch theorem, we then obtain in the following two elliptic complexes
+    \begin{equation}
+    0\rightarrow W^{\ell ,p}_F (\Sigma ,E)\xrightarrow{D_F} W^{\ell -1,p} (\Sigma ,T^{0,1}\Sigma\otimes E)\rightarrow 0
+    \end{equation}
+    and
+    \begin{equation}
+    0\rightarrow W^{\ell ,p}_F (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast})\xrightarrow{D_F^{\ast}} W^{\ell -1,p} (\Sigma ,T^{1,1}\Sigma\otimes E)\rightarrow 0
+    \end{equation}
+    <a aria-describedby="footnote-label" href="#Fredholm-finiteness">two isomorphisms: the cokernel of \(D_F\) is isomorphic to the (dual of) kernel of \(D_F\) and the kernel of \(D_F\) is isomorphic to the (dual of) cokernel of \(D_F^{\ast}\).</a>
+</p>
+
+<p class="proof">From formula \eqref{formula-adjoint-integration} we know that (ii) implies (i). Conversely, assume (i) is true, then </p>
 <footer>
     <h2 class="visually-hidden" id="footnote-label">Footnotes</h2>
     <ol>
         <li id="choice of a.c.s.">This should be more careful. In fact, in our case we can only show that encoded with a perturbation data of almost complex structures, the linearization on the product space is Fredholm. But then Sard-Smale theorem would tell us after a generic choice of almost complex structures, the linearization is surjective.</li>
         <li id="holomorphic or algebraic line bundle">or algebraic, in AG setting. In fact, they are the same.</li>
+        <li id="Fredholm-finiteness">This follows from the fact that with the Fredholm property, these kernels and cokernels are finite-dimensional vector spaces.</li>
     </ol>
 </footer>
 </body>
