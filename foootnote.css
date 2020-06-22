@@ -36,7 +36,7 @@ article {
   vertical-align: super; /* 2 */
   font-size: 0.5em; /* 3 */
   margin-left: 2px; /* 4 */
-  color: blue; /* 5 */
+  color: violet; /* 5 */
   text-decoration: underline; /* 5 */
   cursor: pointer; /* 5 */
 }

@@ -23,9 +23,16 @@
         div.s.remark::before{
             content: "A." counter(statement)".Remark";
         }
+        div.s.theorem::before{
+            content: "A." counter(statement)".Theorem";
+        }
+        div.s.lemma::before{
+            content: "A." counter(statement)".Lemma";
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="foootnote.css">
 </head>
+<article>
 <h1>Appendix. Q&A and Supplement Materials</h1>
 
 <p>This appendix serves as some supplement materials which will or will not be mentioned in talks, depending on their length of the whole context. Problems arising in talks that are not solved immediately would be stated and solved here.</p>
@@ -100,9 +107,28 @@ $$
 and this is just a differential operator of order \(k\) which satisfies the required identity.</p>
 
 <p><div class="s remark"></div>In our case, we are concerning differential operators on a single hermitian vector bundle \(E\to\Sigma\), so when two sections \(s_1 ,s_2\) satisfies \(s_1\perp s_2\) on the boundary, it follows automatically(from the construction of the proof) that the right-hand side concerning integration on the boundary vanishes, hence we have the "true adjointness" for Cauchy-Riemann operators.</p>
-<hr class="new">
+
+<h2 class="section" id="functional-analysis">Odds and Ends in Functional Analysis</h2>In this section we are going to prove functional-analytical results that we use in the proof of our main theorems. This appendix is written for those who do not quite familiar with functional analysis. Firstly let's recall the basic structural theorem in functional analysis.
+
+
+<p><div class="s theorem" href="Hahn-Banach">(Hahn-Banach)</div>Assume \(X\) is a vector space over \(\mathbb{R}\), \(A\subseteq X\) a vector subspace of \(X\). Let \(p\colon X\to\mathbb{R}\) be a real-valued function such that for all \(x,y\in X\) and \(\alpha\in [0,1]\), we have
+    $$
+    p(\alpha x+(1-\alpha )y)\leq \alpha p(x)+(1-\alpha)p(y).
+    $$
+    Let \(f\) be a linear function defined on \(A\) satisfying \(f(a)\leq p(a)\) for all \(a\in A\), then there exists a linear function \(g\) defined on \(X\) such that \(g(a)=f(a)\) for all \(a\in A\) and \(g(x)\leq p(x)\) for all \(x\in X\).</p>
+
+    <p>There is also a complex version with some little modification on \(p\) and with the module of \(f(x)\) replacing \(f(x)\). This theorem is always used to indicate that there exists sufficiently many linear functionals on the dual space.</p>
+
+    <p><div class="s lemma"></div>Let \(A\subseteq X\) be a closed subspace of a reflexive Banach space \(X\), then we have the isomorphism \((A^{\perp})^{\perp}\cong A\). Here \(A^{\perp}\) denotes the annihilator of \(A\) in \(X^{\ast}\), the dual space of \(X\).</p>
+
+    <p>We say a Banach space \(X\) is <b class="textbf">reflexive</b> if \((X^{\ast})^{\ast}\cong X\).</p>
+
+    <p class="proof">By definition, \((A^{\perp})^{\perp} =\{\mu\in (X^{\ast })^{\ast}\vert \mu (f)=0\ \forall f\in A^{\perp}\} =\{x\in X\vert f(x)=0\ \forall f\in A^{\perp}\}\). Now notice that for any \(x\not\in A\), there exists a linear functional \(g\in X^{\ast}\) that is bounded and \(g(x)\neq 0\) but \(g(a)=0\) for all \(a\in A\) by Hahn-Banach theorem, hence we know that \(f(x)=0\) for all \(f\in A^{\perp}\) implies that \(x\in A\).</p>
+
+    <p>This lemma is used in the proof of corollary <a href="1.Introduction.html#Serre-duality-for-gRR">1.15</a>.</p>
 <footer>
     <ol>
         <li id="order zero differential operator">The case when the differential operator has order \(0\) is obvious.</li>
     </ol>
 </footer>
+</article>

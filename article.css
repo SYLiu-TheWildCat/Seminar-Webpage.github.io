@@ -81,7 +81,7 @@
         p.proof::after{
             float: right;
             content: "";
-            border: 1px black solid;
+            border: 1px white solid;
             display: block;
             height: 15px;
             width: 15px;
@@ -118,7 +118,7 @@
         a{
             color: violet;
         }
-        article{
-            background-color: darkgreen;
+        body{
+            background-color: rgb(0, 49, 0);
             color: white;
         }

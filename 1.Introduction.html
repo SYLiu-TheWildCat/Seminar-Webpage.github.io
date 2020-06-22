@@ -267,7 +267,7 @@ $$</p>
     \end{equation}
 </p>
 
-<p><div class="s crl"></div>Assume \(D\) as constructed above with \(A\) of class \(W^{\ell -1,p}\) and the bundle pair \((E,F)\) defined as in theorem <a href="#generalized-Riemann-Roch">1.12</a>, then for any \(\eta\in L^r (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast} )\) with \(r>1\), the following two statements are equivalent:
+<p><div class="s crl" id="Serre-duality-for-gRR"></div>Assume \(D\) as constructed above with \(A\) of class \(W^{\ell -1,p}\) and the bundle pair \((E,F)\) defined as in theorem <a href="#generalized-Riemann-Roch">1.12</a>, then for any \(\eta\in L^r (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast} )\) with \(r>1\), the following two statements are equivalent:
 <ol class="thm">
     <li>\(\int_{\Sigma }\eta\wedge D\xi\in\mathbb{R}\) for any \(\xi\in\Omega^0_F (\Sigma ,E)\);</li>
     <li>\(\eta\) is of class \(W^{\ell ,p}\), \(D^{\ast}\eta =0\) and \(\eta (\partial\Sigma )\subseteq F\). In other words, \(\eta\in W_F^{\ell ,p} (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast})\).</li>
@@ -284,13 +284,32 @@ $$</p>
     <a aria-describedby="footnote-label" href="#Fredholm-finiteness">two isomorphisms: the cokernel of \(D_F\) is isomorphic to the (dual of) kernel of \(D_F\) and the kernel of \(D_F\) is isomorphic to the (dual of) cokernel of \(D_F^{\ast}\).</a>
 </p>
 
-<p class="proof">From formula \eqref{formula-adjoint-integration} we know that (ii) implies (i). Conversely, assume (i) is true, then </p>
+<p class="proof">From formula \eqref{formula-adjoint-integration} we know that (ii) implies (i). Conversely, assume (i) is true, pick a Riemannian metric \(g\) on \(\Sigma\) compactible with the assumed almost complex structure on \(\Sigma\), then we obtain a metric on the tensor bundle \(T^{1,0}\Sigma\otimes E^{\ast}\) and also on \(T^{0,1}\Sigma\otimes E\) so that the natural pairing gives a linear map
+    $$
+    L^r (\Sigma ,T^{1,0}\Sigma\otimes E^{\ast})\rightarrow (\Omega^{0,1} (\Sigma ,E))^{\ast}
+    $$
+    given by assigning to each \(\eta\) the linear function \(\langle\eta ,-\rangle\). <a aria-describedby="footnote-label" href="#conjugate-index">Let \(q\) be the conjugate index to \(r\)</a>, then we know that the above linear map is an isomorphism, and we can extend \(\Omega^{0,1} (\Sigma ,E)\) to the space \(L^q (\Sigma ,T^{0,1}\Sigma\otimes E)\) of differential \((0,1)\)-forms of class \(L^q\). We could then complete \(\Omega^0 (\Sigma ,E)\) to the space \(W^{1,q} (\Sigma ,E)\). Note that we can identify \(E^{\ast}\) with \(E\) via the hermitian inner product \(h\), and \(\langle -,-\rangle\) is given exactly by pairing the differential forms and using the hermitian inner product to pairing \(E\) and \(E^{\ast}\). We could then decompose \(\langle -,-\rangle\) into the real parts and imagine parts
+    $$
+    \langle -,-\rangle =(-,-)+i(-,J-).
+    $$
+    We now come back to our computation. For \(\xi\in W^{1,q}_F (\Sigma ,E)\), we have
+    $$
+    0=\iIm\int_{\Sigma}\eta\wedge D\xi =\int_{\Sigma } (J\eta ,D\xi) =-\int_{\Sigma} (\eta ,JD\xi) =-\int_{\Sigma}  \langle\eta ,D\xi\rangle_{E\otimes T^{0,1}\Sigma}\dvol,
+    $$ 
+    where the last inner product is defined by the product of the hermitian metric on \(E\) and that on \(T^{0,1}\Sigma\). This tells us that \(\eta\) lies in the orthogonal complement of \(\im D_F\), hence from Riemann-Roch theorem <a href="#generalized-Riemann-Roch" class="thm">1.12</a>, the image \(\im D_F\) is the annihilator of the kernel \(\ker D_F^{\ast}\subseteq L^r (\Sigma ,T^{0,1}\Sigma\otimes E)\), and since \(L^p\) spaces are reflexive Banach spaces, the annihilator of an annihilator of a closed subspace coincides with the closed subspace itself. Therefore \(\eta\in\ker D_F^{\ast}\) and hence \(\eta\) is of class \(W^{\ell ,p}\) and satisfies the given boundary condition. To verify \(D^{\ast}\eta =0\), just recall the identity \eqref{formula-adjoint-integration}. 
+</p>
+
+<p><div class="s remark"></div>The general Serre duality is the duality between Dolbeault cohomology groups of the sheaf of differential forms: for a complex manifold \(X\) of dimension \(n\) and a holomorphic vector bundle \(E\to X\), we have the isomorphism
+$$
+H^p (X,\Omega_X^q (E))\xrightarrow{\simeq} (H^{n-p} (X,\Omega_X^{n-q} (E))^{\ast}.
+$$</p>
 <footer>
     <h2 class="visually-hidden" id="footnote-label">Footnotes</h2>
     <ol>
         <li id="choice of a.c.s.">This should be more careful. In fact, in our case we can only show that encoded with a perturbation data of almost complex structures, the linearization on the product space is Fredholm. But then Sard-Smale theorem would tell us after a generic choice of almost complex structures, the linearization is surjective.</li>
         <li id="holomorphic or algebraic line bundle">or algebraic, in AG setting. In fact, they are the same.</li>
         <li id="Fredholm-finiteness">This follows from the fact that with the Fredholm property, these kernels and cokernels are finite-dimensional vector spaces.</li>
+        <li id="conjugate-index">The conjugate index means that we have the identity \(\displaystyle\frac{1}{q} +\frac{1}{r} =1\).</li>
     </ol>
 </footer>
 </body>
