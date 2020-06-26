@@ -1,6 +1,5 @@
 window.MathJax = {
     tex:{
-        extensions: ["autoload-all.js"],
         tags: 'ams',
         macros: {
             im: "{\\mathrm {im}}",
