@@ -33,6 +33,10 @@
         h2.section::before{
             content: "2"counter(sec,lower-alpha)")";
         }
+
+        div.s.prp::before{
+            content: "2."counter(statement) ".""Proposition";
+        }
     </style>
 </head>
 <article>
@@ -56,4 +60,68 @@
     \mathcal{D} (U)\subseteq\dotsb\subseteq W^{k,p} (U)\subseteq W^{k-1,p} (U)\subseteq\dotsb\subseteq W^{1,p} (U)\subseteq L^p (U)\subseteq W^{-1,p} (U)\subseteq\dotsb\subseteq\mathcal{D}' (U),
 $$
 where we set \(W^{-k,p} (U)\) to be the dual space of \(W^{k,p} (U)\), i.e. the space of continuous linear functionals on \(W^{k,p} (U)\) endowed with weak-\(\ast\) toplogy. Viewed as distributions, we have naturally the action of derivations and multiplication by test functions.</p>
+
+<p>In the above paragraph, we have introduced the space \(C^k\) of all differentiable functions of order up to \(k\), and it is easy to generlize to the space of differentiable functions of fractional order. This is the "Hölder continuous" we met in analysis courses, and the formal definition is given below.</p>
+
+<p><div class="s definition"></div>A function \(f\in C^0 (U)\) is called <b class="textbf">Hölder continuous</b> of order \(0\leq\alpha < 1\) if the supremum
+$$
+\sup_{x,y\in U, x\neq y}\frac{\vert f(x)-f(y)\vert}{\vert x-y\vert^{\alpha}}<\infty.
+$$
+We say a function is Hölder continuous of order \(k\leq\beta < k+1 \) if \(D^{\alpha} f\) is Hölder continuous of order \(\beta -k\) for all \(\vert\alpha\vert =k\). </p>
+
+<p>The basic structure of Sobolev spaces are contained in the following theorem, called "Sobolev embedding theorem". This is done by several mathematicians, and a proof can be found in Chapter 5 of the famous textbook [<a href="seminar-Riemann-Roch.html#Ev10">5</a>].</p>
+
+<p><div class="s theorem">(Sobolev)</div>Let \(U\) be a bounded domain in \(\mathbb{R}^n\) satisfying local Lipschitz conditions(which can be always achieved on manifolds), \(k\) be a positive integer and \(1< p\leq\infty \) a real number that can be chosen to be infinity. Then we have the following
+<ol class="thm">
+    <li>If \(kp>n\), then we have \(W^{k,p} (U)\hookrightarrow C^{\alpha } (\overline{U})\) where \(0\le \alpha\le\frac{kp-n}{p}\), and we can achieve \(\alpha =\frac{kp-n}{p}\) once this fraction is not an integer. </li>
+    <li>If \(kp\le n\), then we have \(W^{k,p} (U)\hookrightarrow L^q (U)\) for \(p\leq q\leq p^{\ast} =\frac{np}{n-kp}\).</li>
+    <li>If \(kp=n\), then we have \(W^{k,p} (U)\hookrightarrow L^q (U)\) for all \(q\geq p\).</li>
+</ol></p>
+
+<p><div class="s theorem">(Rellich-Kondrachov)</div>Let \(U,k,p\) be as defined in the above theorem, then 
+<ol class="thm">
+    <li>For \(kp\leq n\), the embedding \(W^{k,p} (U)\hookrightarrow L^q (U)\) is compact for \(q\le\frac{np}{n-kp}\) or \(q\le\infty\) when equality is achieved.</li>
+    <li>For \(kp\ge n\), the embedding \(W^{k,p} (U)\hookrightarrow C^{\alpha} (U)\) is compact for all \(\alpha\le k-\frac{n}{p}\).</li>
+</ol></p>
+
+<p>These two results are fundamental in the modern theory of partial differential equations. A restricted proof can be found in [<a href="seminar-Riemann-Roch.html#Ev10">5</a>].</p>
+
+<h2 class="section" id="elliptic-estimate-CR">Elliptic Estimates for Cauchy-Riemann Operators</h2> Now we are going to develop regularity results for Cauchy-Riemann operators over a Riemann surface. Since we are concerning compact Riemann surfaces with boundaries, the local model will be \((U,z)\) where \(U\subseteq\mathbb{H}\) is an open subset of the upper half-plane \(\mathbb{H}\), and the Cauchy-Riemann operator \(D\) has the form \(\bar{\partial} +A\) where \(A\) is just a differential \(1\)-form with values endomorphisms. Since locally the bundle \(E\) and the bundle of differential forms are trivial, we can just view these sections as vector-valued functions over \(E\) with the trivial boundary condition. The statement then reduces to local estimates for the operator \(L\) which is an operator defined on some vector-valued functions \(u\colon U\to\mathbb{R}^{2n}\). We firstly consider the operator \(\bar{\partial}\).
+
+<p><div class="s prp"></div>Let \(u\) be a smooth function defined on \(U\subseteq\mathbb{H}\) satisfying the boundary condition \(u(\mathbb{R}\times\{0\} )\subseteq\mathbb{R}^n\times\{0\}\), then there exists an open subset \(V\subset\subset U\) and a positive constant \(C>0\) such that
+$$
+\Vert u\Vert_{W^{1,p} (V)}\subseteq C(\Vert\bar{\partial} u\Vert_{L^p (U)} +\Vert u\Vert_{L^p (U)}). 
+$$</p>
+
+<p>Recall that in local coordinates, we have \(\bar{\partial } =\partial_s +J\partial_t\) where \(J\) is the almost complex structure, and \(\partial =\partial_s +J\partial_t\). In this case we can pick unitary frame so that the almost complex structure \(J\) is standard, i.e. we have \(\nabla J=0\). Then if we write \(f=\bar{\partial } u\), by an easy calculation, we obtain that
+    $$
+    \Delta u=\partial f. 
+    $$
+    This is our starting point of the elliptic estimate. 
+</p>
+
+<p><div class="s theorem" id="laplacian-estimate"></div>Let \(u\in L_{loc}^p (U)\) and \(f,g,h\in L^p (U)\) satisfies the identity
+$$
+\Delta u=f+\nabla_s g+\nabla_t h
+$$
+in the distribution sense. Then there exists an open subset \(V\subset\subset U\) and a positive constant \(C>0\) such that
+$$
+\Vert u\Vert_{W^{1,p} (V)}\leq C(\Vert u\Vert_{L^p (U)} +\Vert f\Vert_{L^p (U)} +\Vert g\Vert_{L^p (U)} +\Vert h\Vert_{L^p (U)} ). 
+$$
+In other words, \(u\in L^p (U)\) implies that \(u\in W^{1,p} (V)\) for this \(V\subseteq U\).</p>
+
+<p>The proof can be found in Audin's book [<a href="seminar-Riemann-Roch.html#Au14">8</a>] or my thesis [<a href="seminar-Riemann-Roch.html#Li20">14</a>]. This result directly implies the elliptic regularity for the Cauchy-Riemann operator \(\bar{\partial}\) locally. We would then wonder if we could glue them together to obtain global estimates. This is our next result.</p>
+
+<p><div class="s theorem"></div>Let \((\Sigma, j,\dvol )\) be a compact Riemann surface with boundary, and \(D\) is a smooth complex-linear Cauchy-Riemann operator on the complex vector bundle \(E\to\Sigma\). Then there exists a positive constant \(C>0\) such that for any \(u\in L^p_{loc} (\Sigma)\),
+$$
+\Vert u\Vert_{W^{1,p} (\Sigma )}\leq C(\Vert\bar{\partial } u\Vert_{L^p (\Sigma)} +\Vert u\Vert_{L^p (\Sigma)}). 
+$$
+</p>
+
+<p class="proof">We just apply theorem <a href="#laplacian-estimate">2.6</a>. For each \(x\in\Sigma\), we can pick an open neighbourhood \(U_x\) and an open subset \(V_x\) such that \(x\in V_x\) and the estimate in theorem <a href="#laplacian-estimate">2.6</a> holds in \(U_x\). However, in this case, \(D=\bar{\partial } +A\) for some matrix \(A\), but it is smooth, so we have \(\Vert\bar{\partial } u\Vert_{L^p (U_x )}\leq\Vert Du\Vert_{L^p (U_x )} +\Vert Au\Vert_{L^p (U_x )}\) and hence the same estimate holds also for \(D\). Since \(\Sigma\) is compact, it is covered by only finitely many pairs \(\{(U_i ,V_i)\}\) with \(\bigcup V_i =\Sigma\), and we have the estimates for each \(V_i\), hence
+$$
+\Vert u\Vert_{W^{1,p} (\Sigma )}^p =\sum\Vert u\Vert_{W^{1,p} (V_i)}^p\leq \sum C_i (\Vert Du\Vert_{L^p (U_i)} +\Vert u\Vert_{L^p (U_i)})\leq C(\Vert Du\Vert_{L^p (\Sigma)} +\Vert u\Vert_{L^p (\Sigma)}. 
+$$</p>
+
+<p>This ends our first part of the proof concerning Cauchy-Riemann operators. Now we want to prove the Fredholm property as well as the generaization of this result to real linear C-R operators of class \(W^{k-1,p}\). Note that this does not follow directly from our preceding proof since we do not have \(fu\in L^p (U)\) if \(f,u\in L^p (U)\).</p>
 </article>
