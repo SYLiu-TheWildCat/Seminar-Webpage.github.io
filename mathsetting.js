@@ -8,6 +8,7 @@ window.MathJax = {
             Hom: "{\\mathrm {Hom}}",
             diff: "{\\mathrm {d}}",
             iIm: "{\\mathrm {Im}}",
+            End: "{\\mathrm {End}}",
         }
     }
 };

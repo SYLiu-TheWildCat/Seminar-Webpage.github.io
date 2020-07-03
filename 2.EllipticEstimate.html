@@ -74,14 +74,14 @@ We say a function is Hölder continuous of order \(k\leq\beta < k+1 \) if \(D^{\
 <p><div class="s theorem">(Sobolev)</div>Let \(U\) be a bounded domain in \(\mathbb{R}^n\) satisfying local Lipschitz conditions(which can be always achieved on manifolds), \(k\) be a positive integer and \(1< p\leq\infty \) a real number that can be chosen to be infinity. Then we have the following
 <ol class="thm">
     <li>If \(kp>n\), then we have \(W^{k,p} (U)\hookrightarrow C^{\alpha } (\overline{U})\) where \(0\le \alpha\le\frac{kp-n}{p}\), and we can achieve \(\alpha =\frac{kp-n}{p}\) once this fraction is not an integer. </li>
-    <li>If \(kp\le n\), then we have \(W^{k,p} (U)\hookrightarrow L^q (U)\) for \(p\leq q\leq p^{\ast} =\frac{np}{n-kp}\).</li>
+    <li>If \(kp< n\), then we have \(W^{k,p} (U)\hookrightarrow L^q (U)\) for \(p\leq q\leq p^{\ast} =\frac{np}{n-kp}\).</li>
     <li>If \(kp=n\), then we have \(W^{k,p} (U)\hookrightarrow L^q (U)\) for all \(q\geq p\).</li>
 </ol></p>
 
 <p><div class="s theorem">(Rellich-Kondrachov)</div>Let \(U,k,p\) be as defined in the above theorem, then 
 <ol class="thm">
-    <li>For \(kp\leq n\), the embedding \(W^{k,p} (U)\hookrightarrow L^q (U)\) is compact for \(q\le\frac{np}{n-kp}\) or \(q\le\infty\) when equality is achieved.</li>
-    <li>For \(kp\ge n\), the embedding \(W^{k,p} (U)\hookrightarrow C^{\alpha} (U)\) is compact for all \(\alpha\le k-\frac{n}{p}\).</li>
+    <li>For \(kp\leq n\), the embedding \(W^{k,p} (U)\hookrightarrow L^q (U)\) is compact for \(q<\frac{np}{n-kp}\) or \(q<\infty\) when equality is achieved.</li>
+    <li>For \(kp> n\), the embedding \(W^{k,p} (U)\hookrightarrow C^{\alpha} (U)\) is compact for all \(\alpha< k-\frac{n}{p}\).</li>
 </ol></p>
 
 <p>These two results are fundamental in the modern theory of partial differential equations. A restricted proof can be found in [<a href="seminar-Riemann-Roch.html#Ev10">5</a>].</p>
@@ -124,5 +124,15 @@ $$
 $$
 &nbsp</p>
 
-<p>This ends our first part of the proof concerning Cauchy-Riemann operators. Now we want to prove the Fredholm property as well as the generaization of this result to real linear C-R operators of class \(W^{k-1,p}\). Note that this does not follow directly from our preceding proof since we do not have \(fu\in L^p (U)\) if \(f,u\in L^p (U)\).</p>
+<p>Note that the general case does not follow directly from our preceding proof since we do not have \(fu\in L^p (U)\) if \(f,u\in L^p (U)\). So let's investigate what happens to this zero-order differential operator \(A\).</p>
+
+<p><div class="s prp"></div>Let \(\ell p>2\) where \(\ell\) is a positive integer and \(p>1\) a positive real number. Let \(k\leq\ell\) be another positive real number and \(q>1\) such that \(k-\frac{2}{q}\leq\ell -\frac{2}{p}\). Let \( A\in W^{\ell-1 ,p} (\Sigma ,T^{\ast }\Sigma\otimes_{\mathbb{R}}\End_{\mathbb{R}} (E))\) be a differential \(1\)-form with values in \(\End_{\mathbb{R} } (E)\), then \(A\) can be viewed as a compact linear operator
+$$
+W^{k,q} (\Sigma ,E)\to W^{k-1,q} (\Sigma ,T^{0,1}\Sigma\otimes E)\colon\xi\mapsto (A\xi )^{0,1}.
+$$</p>
+
+<p class="proof">We apply the Sobolev embedding theorem. If \(k=\ell\) then \(q\leq p\), and by Hölder's inequality, \(W^{\ell -1,p}\hookrightarrow W^{k-1,q}\). Since the map \(W^{1,p} (K)\to L^p (K)\) given by multiplying a \(L^p\)-function is well-defined(from the Sobolev embedding theorem, the Hölder's inequality, and the assumption that \(K\) be compact), the first statement holds for \(k=\ell\). For \(k\leq\ell-2\), the relation \(k-\frac{2}{q}\leq\ell -\frac{2}{p}\) tells us that we have the embedding \(W^{\ell -1,q} (\Sigma ,T^{\ast }\Sigma\otimes_{\mathbb{R}}\End_{\mathbb{R} } (E))\hookrightarrow C^{k-1} (\Sigma ,T^{\ast }\Sigma\otimes_{\mathbb{R}}\End_{\mathbb{R} } (E))\), and the result follows directly. For \(k=\ell-1\), we have \(\frac{2}{p}\leq 1+\frac{2}{q}\Rightarrow q\leq\frac{2p}{2-p}\), hence from Sobolev embedding theorem, we have \(W^{\ell -1,p} (\Sigma ,T^{\ast }\Sigma\otimes_{\mathbb{R}}\End_{\mathbb{R} } (E))\hookrightarrow W^{k-1,q} (\Sigma ,T^{\ast}\Sigma\otimes_{\mathbb{R}}\End_{\mathbb{R}} (E))\), which gives the required result.</br></br>
+    Now for the compactness, we just apply the Rellich-Kondrachov theorem. If \(kq>2\) and \(q>2\) then we have the compact embedding \(W^{k,q}\hookrightarrow C^{k-1}\) and hence the operator is obviously compact. If \(q\leq 2\), then we only have compact embeddings \(W^{k,q}\hookrightarrow W^{k-1,r}\) for any \(q\leq r< \frac{2q}{2-q}\), but since \(\Sigma\) is compact, some of them embeds into \(W^{k-1,q'} \) where \(q'\) is conjugate to \(q\), and the compactness follows.</br></br>
+    If \(kq\leq 2\), then we must have \(k=1\) and \(q\leq 2\). In this case, we just use the Rellich embedding for \(W^{1,q}\hookrightarrow L^r\) for any \(q\leq r<\frac{2q}{2-q}\), and since \(q\leq 2\), it follows that \(W^{1,q}\hookrightarrow L^{q'}\) is compact where \(q'\) is conjugate to \(q\), therefore in any cases, this operator is compact(and hence bounded). 
+</p>
 </article>
