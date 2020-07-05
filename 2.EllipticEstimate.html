@@ -84,7 +84,13 @@ We say a function is Hölder continuous of order \(k\leq\beta < k+1 \) if \(D^{\
     <li>For \(kp> n\), the embedding \(W^{k,p} (U)\hookrightarrow C^{\alpha} (U)\) is compact for all \(\alpha< k-\frac{n}{p}\).</li>
 </ol></p>
 
-<p>These two results are fundamental in the modern theory of partial differential equations. A restricted proof can be found in [<a href="seminar-Riemann-Roch.html#Ev10">5</a>].</p>
+<p>These two results are fundamental in the modern theory of partial differential equations. A restricted proof can be found in [<a href="seminar-Riemann-Roch.html#Ev10">5</a>]. Another important result that we would use is the following boundary estimate.</p>
+
+<p><div class="s theorem">(Trace Theorem)</div>Let \(\Omega\) a domain in \(\mathbb{R}^n\) with good boundary property, and suppose there exists an \(m,p\)-extension operator \(E\) for \(\Omega\). Let \(m\in\mathbb{Z}_{>0}\) and \(p>1\) be positive numbers such that \(mp< 2\), and \(p\leq q\leq\frac{(n-1)p}{n-mp}\), then we have the embedding
+$$
+W^{m,p} (\Omega )\hookrightarrow L^q (\Omega ).
+$$
+If \(mp=n\), we can choose \(q\) to be an arbitrary positive real number \(\geq p\).</p>
 
 <h2 class="section" id="elliptic-estimate-CR">Elliptic Estimates for Cauchy-Riemann Operators</h2> Now we are going to develop regularity results for Cauchy-Riemann operators over a Riemann surface. Since we are concerning compact Riemann surfaces with boundaries, the local model will be \((U,z)\) where \(U\subseteq\mathbb{H}\) is an open subset of the upper half-plane \(\mathbb{H}\), and the Cauchy-Riemann operator \(D\) has the form \(\bar{\partial} +A\) where \(A\) is just a differential \(1\)-form with values endomorphisms. Since locally the bundle \(E\) and the bundle of differential forms are trivial, we can just view these sections as vector-valued functions over \(E\) with the trivial boundary condition. The statement then reduces to local estimates for the operator \(L\) which is an operator defined on some vector-valued functions \(u\colon U\to\mathbb{R}^{2n}\). We firstly consider the operator \(\bar{\partial}\).
 
