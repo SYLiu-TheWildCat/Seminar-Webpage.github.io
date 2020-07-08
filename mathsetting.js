@@ -9,6 +9,7 @@ window.MathJax = {
             diff: "{\\mathrm {d}}",
             iIm: "{\\mathrm {Im}}",
             End: "{\\mathrm {End}}",
+            Ind:"{\\mathrm {Ind}}",
         }
     }
 };

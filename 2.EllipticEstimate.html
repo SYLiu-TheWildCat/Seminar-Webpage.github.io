@@ -141,4 +141,24 @@ $$</p>
     Now for the compactness, we just apply the Rellich-Kondrachov theorem. If \(kq>2\) and \(q>2\) then we have the compact embedding \(W^{k,q}\hookrightarrow C^{k-1}\) and hence the operator is obviously compact. If \(q\leq 2\), then we only have compact embeddings \(W^{k,q}\hookrightarrow W^{k-1,r}\) for any \(q\leq r< \frac{2q}{2-q}\), but since \(\Sigma\) is compact, some of them embeds into \(W^{k-1,q'} \) where \(q'\) is conjugate to \(q\), and the compactness follows.</br></br>
     If \(kq\leq 2\), then we must have \(k=1\) and \(q\leq 2\). In this case, we just use the Rellich embedding for \(W^{1,q}\hookrightarrow L^r\) for any \(q\leq r<\frac{2q}{2-q}\), and since \(q\leq 2\), it follows that \(W^{1,q}\hookrightarrow L^{q'}\) is compact where \(q'\) is conjugate to \(q\), therefore in any cases, this operator is compact(and hence bounded). 
 </p>
+
+<p>The main estimate for this subsection is the following</p>
+
+<p><div class="s theorem"></div>Let \(D_F\) be a real linear Cauchy-Riemann operator of class \(W^{\ell -1,p}\) where \(\ell p>2\), and \(D_F^{\ast}\) its corresponding dual operator, then for \(0< k\leq\ell\) an integer and \(q,r\in\mathbb{R}_+\) such that \(\frac{2}{r} -1\leq k-\frac{2}{q}\leq\ell -\frac{2}{p}\), we have \(D_F\) and \(D_F^{\ast}\) Fredholm viewed as an operator \(W^{k,q}_F (\Sigma ,E)\to W^{k-1,q} (\Sigma ,E\otimes T^{0,1} E)\), and the Fredholm index satisfies \(\Ind (D_F )+\Ind (D_F^{\ast} )=0\). This is independent of the choice of almost complex structures on \(\Sigma\) and the indices \(k,q\). Moreover, we have
+<ol class="thm">
+<li>For any \(\eta\in L^r (\Sigma ,T^{0,1}\Sigma\otimes E)\) and \(\xi\in W^{k-1,q} (\Sigma ,E)\), the identity 
+    $$
+    \int_{\Sigma }\langle\eta ,D_F\zeta\rangle\dvol =\int_{\Sigma }\langle\xi ,\zeta\rangle\dvol
+    $$
+    for any \(\zeta\in W^{k,q}_F (\Sigma ,E)\) implies \(\eta\in W^{k,q}_F (\Sigma ,T^{0,1}\Sigma\otimes E)\) and \(D_F^{\ast}\eta =\xi\).
+</li>
+<li>For any \(\eta\in L^r (\Sigma ,E)\) and \(\xi\in W^{k-1,q} (\Sigma ,T^{0,1}\Sigma\otimes E)\), the identity
+    $$
+    \int_{\Sigma}\langle\eta ,D_F^{\ast}\zeta\rangle\dvol =\int_{\Sigma }\langle\xi ,\zeta\rangle\dvol
+    $$
+    for any \(\zeta\in W^{k,q}_F (\Sigma ,T^{0,1}\Sigma\otimes E)\) implies \(\eta\in W^{k,q}_F (\Sigma ,E)\) and \(D_F\eta =\xi\). 
+</li>
+</ol></p>
+
+<p>The proof can be found in my thesis [<a href="seminar-Riemann-Roch.html#Li20">14</a>]. This proves the first part of Riemann-Roch theorem. </p>
 </article>
