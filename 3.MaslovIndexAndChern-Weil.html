@@ -1,6 +1,7 @@
 <!-- #+OPTIONS: tex:dvipng -->
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
@@ -40,10 +41,12 @@
         <p>In the previous series of talks we have proved the first part of Riemann-Roch theorem <a href="1.Introduction.html#generalized-Riemann-Roch">1.12</a>, and in this series we aim to introduce the concept of boundary Maslov index, which serves as the Fredholm index stated in this theorem. Then we will try to give a proof of the second part of Riemann-Roch theorem using properties of Maslov index and Morse theory.</p>
 
         <h2 class="section">The Boundary Maslov Index</h2> We start with an exposition of the classical Maslov index. It is originally studied by Maslov and then developed by Arnold in his paper [<a href="seminar-Riemann-Roch.html#Ar67">15</a>] where they used it to give another conditions for quantizations. In their setting, let \((V,\omega )\) be a symplectic vector space of dimension \(2n\) where \(\omega\) is some symplectic form, and we are considering the space \(\mathcal{L} (V)\) of all Lagrangian subspace of \(V\). This space is called the <b class="textbf">Lagrangian Grassmannian</b> of \(V\). On the complex side, given a complex vector space \((W,
-        J)\) where \(J\) is the complex structure, we have the space \(\mathcal{R} (W)\) of all totally real subspaces of \(W\). With a group-theoretic point of view, we know that they are all homogeneous spaces: \(\mathcal{L} (V)=\mathrm{Sp} (V)/\mathrm{GL} (n,\mathbb{R})\), and \(\mathcal{R} (V)=\mathrm{GL} (n,\mathbb{C})/\mathrm{GL} (n,\mathbb{R})\). The Maslov index gives a map
+        J)\) where \(J\) is the complex structure, we have the space \(\mathcal{R} (W)\) of all totally real subspaces of \(W\). With a group-theoretic point of view, we know that they are all homogeneous spaces: \(\mathcal{L} (V)=\mathrm{Sp} (V)/\mathrm{GL} (n,\mathbb{R})\), and \(\mathcal{R} (W)=\mathrm{GL} (W,\mathbb{C})/\mathrm{GL} (n,\mathbb{R})\). The Maslov index gives a map
         $$
         \Pi_1 (\mathcal{L} (V))\rightarrow\frac{\mathbb{Z}}{2},
         $$
-        that is, associated to any path in \(\mathcal{L} (V)\) the 
+        that is, associated to any path \(\gamma\) in \(\mathcal{L} (V)\) a half-integer \(\mu (\gamma) \). When we are considering loops in this Lagrangian Grassmannian, we would get an integer, which by Arnold comes from the pairing of the homology class \(\gamma\in H_1 (\mathcal{L} (V),\mathbb{Z})\) with some cohomology class \(\mu\in H^1 (\mathcal{L} (V),\mathbb{Z})\). This class \(\mu\) is called the <b class="textbf">Maslov class</b> and the pairing \(\mu (\gamma)\) is called the <b class="textbf">Maslov index</b> of \(\gamma\). 
+        <p><div class="s lemma"></div>Consider the group homomorphism \(\det\colon\mathrm{U} (V)\to\mathbb{S}^1\). This homomorphism descends to the homogeneous space \(\det\colon\mathcal{L} (V)= U(V)/\mathrm{O} (V)\to\mathbb{S}^1\) and its induced map on \(\pi_1 \) coincides with the Maslov index \(\mu\).</p>
+        
     </body>
 </article>

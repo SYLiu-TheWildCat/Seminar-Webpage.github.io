@@ -15,8 +15,7 @@ window.MathJax = {
 };
 
 MathJax.Hub.Config({
-    SVG: {
-        scale: 120,
-        font: "Neo-Euler"
-    }
-});
+        "HTML-CSS": {
+            fonts: ["STIX"]
+        }
+    });
