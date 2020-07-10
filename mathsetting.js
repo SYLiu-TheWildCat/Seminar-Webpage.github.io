@@ -15,7 +15,8 @@ window.MathJax = {
 };
 
 MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "Asana Math"
+    SVG: {
+        scale: 120,
+        font: "Neo-Euler"
     }
 });
