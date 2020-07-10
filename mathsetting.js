@@ -13,3 +13,9 @@ window.MathJax = {
         }
     }
 };
+
+MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "Asana Math"
+    }
+});

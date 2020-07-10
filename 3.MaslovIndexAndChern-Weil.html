@@ -1,0 +1,45 @@
+<!-- #+OPTIONS: tex:dvipng -->
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+            </script>
+    <script src="mathsetting.js"></script>
+    <script>
+        document.getElementById('counter').innerHTML = i;
+    </script>
+    <link rel="stylesheet" type="text/css" href="foootnote.css">
+    <link rel="stylesheet" type="text/css" href="article.css">
+    <style>
+        div.s.theorem::before{
+            content: "3." counter(statement) "." "Theorem";
+        }
+        div.s.definition::before{
+            content: "3." counter(statement) "." "Definition";
+        }
+        div.s.lemma::before{
+            content: "3." counter(statement) "." "Lemma";
+        }
+        div.s.remark::before{
+            content: "3." counter(statement) "." "Remark";
+        }
+        div.s.crl::before{
+            content: "3." counter(statement) "." "Corollary";
+        }
+        h2.section::before{
+            content: "3" counter(sec,lower-alpha)")";
+        }
+    </style>
+</head>
+<article>
+    <body>
+        <h1>&#8546. The Maslov Index and Chern-Weil Theory.</h1>
+        <p>In the previous series of talks we have proved the first part of Riemann-Roch theorem <a href="1.Introduction.html#generalized-Riemann-Roch">1.12</a>, and in this series we aim to introduce the concept of boundary Maslov index, which serves as the Fredholm index stated in this theorem. Then we will try to give a proof of the second part of Riemann-Roch theorem using properties of Maslov index and Morse theory.</p>
+
+        <h2 class="section">The Boundary Maslov Index</h2> We start with an exposition of the classical Maslov index. It is originally studied by Maslov and then developed by Arnold in his paper [<a href="seminar-Riemann-Roch.html#Ar67">15</a>] where they used it to give another conditions for quantizations. In their setting, let \((V,\omega )\) be a symplectic vector space of dimension \(2n\) where \(\omega\) is some symplectic form, and we are considering the space \(\mathcal{L} (V)\) of all Lagrangian subspace of \(V\). This space is called the <b class="textbf">Lagrangian Grassmannian</b> of \(V\). On the complex side, given a complex vector space \((W,
+        J)\) where \(J\) is the complex structure, we have the space \(\mathcal{R} (W)\) of all totally real subspaces of \(W\). With a group-theoretic point of view, we know that they are all homogeneous spaces: \(\mathcal{L} (V)=\mathrm{Sp} (V)/\mathrm{GL} (n,\mathbb{R})\), and \(\mathcal{R} (V)=\mathrm{GL} (n,\mathbb{C})/\mathrm{GL} (n,\mathbb{R})\). The Maslov index gives for 
+    </body>
+</article>
