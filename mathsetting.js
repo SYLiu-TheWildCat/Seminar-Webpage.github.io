@@ -14,8 +14,10 @@ MathJax = {
         inlineMath: [['$', '$'], ['\\(', '\\)']]
     },
     "HTML-CSS": {
-        preferredFont: "STIX"
-    }
+        preferredFont: "STIX",
+        availableFonts: ["STIX"],
+        webFont: "STIX"
+    },
     svg:{
         fontCache: 'global'
     }
