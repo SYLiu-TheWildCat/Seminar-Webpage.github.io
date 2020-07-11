@@ -1,7 +1,7 @@
-MathJax = {
-    tex:{
-        tags: 'ams',
-        macros: {
+MathJax.Hub.Config({
+    TeX:{
+        equationnumbers: {autoNumber: "AMS" },
+        Macros: {
             im: "{\\mathrm {im}}",
             dvol: "{\\mathrm {dvol}}",
             index: "{\\mathrm {index}}",
@@ -11,14 +11,5 @@ MathJax = {
             End: "{\\mathrm {End}}",
             Ind:"{\\mathrm {Ind}}",
         },
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    "HTML-CSS": {
-        preferredFont: "STIX",
-        availableFonts: ["STIX"],
-        webFont: "STIX"
-    },
-    svg:{
-        fontCache: 'global'
-    }
-};
+},
+});
