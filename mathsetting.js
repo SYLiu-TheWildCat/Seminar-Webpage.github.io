@@ -12,8 +12,8 @@ MathJax.Hub.Config({
             Ind:"{\\mathrm {Ind}}",
         },
         "HTML-CSS" : {
-            availableFonts : ["STIX"],
-            preferredFont : "STIX",
+            availableFonts : ["Latin Modern"],
+            preferredFont : "Latin Modern",
             webFont : "STIX-Web",
             imageFont : null
         },

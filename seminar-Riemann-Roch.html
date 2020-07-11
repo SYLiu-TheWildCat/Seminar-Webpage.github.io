@@ -27,24 +27,57 @@
   margin-left: auto;
   margin-right: auto;
 }
+body{
+            counter-reset: footnotes;
+            counter-reset: statement;
+            counter-reset: sec;
+            margin-left: 140px;
+            font-size: 12pt;
+            padding: 0px 10px;
+        }
+        .sidenav{
+            width: 130px;
+            position: fixed;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: white;
+            overflow-x: hidden;
+            padding: 8px 0;
+        }
+        .sidenav a{
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 9pt;
+            color: darkgreen;
+            display: block;
+        }
         </style>
         <link rel="stylesheet" type="text/css" href="button.css">
     </head>
     <article>
+        <div class="sidenav"><a href="#prerequisites">1. Prerequisites.</a>
+        <a href="#for-interested-people">2. For Interested People.</a>
+    <a href="#remark">3. Remark.</a>
+<a href="#questions">4. questions.</a>
+<a href="#seminar-notes">5. Seminar Notes.</a>
+<a href="#video-and-record">6.Video and Record.</a>
+<a href="#references">References</a></div>
+        <body>
     <h1>Online Seminar on Riemann-Roch Theorem</h1>
     <p>I would like to organize an online seminar on Riemann-Roch theorem in June, 2020, which would be a discussion of appendix C in Mcduff and Salamon's book [<a href="#MS12">1</a>].</p>
-    <h2>1. Prerequisites</h2>
+    <h2 id="prerequisites">1. Prerequisites</h2>
     Prerequisites for this seminar would be basic knowledges about functional analysis, especially the theory of Fredholm operators and Sobolev spaces. Knowledges on algebraic topology are also required, at least the computation methods that we could use to compute the fundamental group of matrix groups. Some familiarity with differential geometry is also required, since we will use connections and Hodge-star operators and things like that. People who do not familiar with these can refer to [<a href="#BS18">3</a>, <a href="#Ev10">5</a>], [<a href="#Wh78">2</a>] and [<a href="#We08">4</a>].
-    <h2>2. For Interested People</h2>
+    <h2 id="for-interested-people">2. For Interested People.</h2>
     People who are interested in and want to attend this seminar can email to liusiyan@usc.edu their name, institute, and the extent that they want to participate in. I offer two different choices:
     <ol>
         <li>I want only to listen to speakers and receive emails that notice me about the time, abstract of the talk and slides/notes.</li>
         <li>I want to give talks in the seminars as well.</li>
     </ol>
     The deadline will be the last day of the first weekend of June, in UTC+8. That is, the deadline of registration would be 23:59:59 at June 6th, in UTC+8.
-    <h2>3. Remark</h2>
+    <h2 id="remark">3. Remark.</h2>
     The prerequisites are not strict: it does not mean that you actually need to read through everything before attending. After you send registration email, I will send an email to see the background of each participant, and the content of the seminar would be managed slightly in order to guarantee that everyone can engage in it and learn something. Also participants who want to share related topics are also welcomed, like other proofs of this Riemann-Roch theorem, different versions of this, and some of its applications appered in someone's work.
-    <h2>4. Questions.</h2>
+    <h2 id="questions">4. Questions.</h2>
     Here are the questions that I would ask to check your backgrounds in mathematics. It does <b>NOT</b> mean that you should not participant in if you could not answer. Just be honest so that you can catch up with the seminar.
     <ol>
         <li>We consider the Grassmannian \(\mathrm{Gr} (n,m)\), which is the space of all \(m\)-dimensional subspaces of \(\mathbb{R}^{n+m}\) endowed with the quotient topology(of what?). What is the fundamental group of \(\mathrm{Gr} (n,m)\)?</li>
@@ -52,7 +85,7 @@
         <li>Let \(X\) be a complex manifold and \(E\to X\) a complex vector bundle over \(X\). Try to give one definition(you can state very briefly the construction of it) of the total Chern class \(c(E)\).(If you only know the first Chern class, just write the construction of the first Chern class.)</li>
     </ol>
     People who want to send me a registration email later than June 1st should send emails along with answers to these questions, as well as a list of all available or unavailable times in a week.
-    <h2>5. Seminar Notes.</h2>
+    <h2 id="seminar-notes">5. Seminar Notes.</h2>
     <ul>
         <li><div>
             <input type="checkbox" id="toggle1" class="unfolder" />
@@ -98,7 +131,7 @@
         </div>
         </li>
     </ul>
-    <h2>6. Video and Record</h2>
+    <h2 id="video-and-record">6. Video and Record.</h2>
     <table style="width:100%">
         <th>Date</th><th>Topics</th><th>Speaker</th>
         <tr>
@@ -118,7 +151,7 @@
         </tr>
     </table>
     <hr>
-    <h2>References</h2>
+    <h2 id="references">References</h2>
     <body>
         <ol>
             <li><a href="https://books.google.de/books/about/J_holomorphic_Curves_and_Symplectic_Topo.html?id=a41JpjfIGocC&redir_esc=y" id="MS12">McDuff, D., & Salamon, D. (2012). J-holomorphic Curves and Symplectic Topology. American Mathematical Soc.</a></li>
@@ -141,5 +174,6 @@
             <li id="Ar67"><a href="https://link.springer.com/article/10.1007/BF01075861">Arnol'd, V. I. (1967). Characteristic class entering in quantization conditions. Funct. Anal. Appl., 1(1), 1–13. doi:
             10.1007/BF01075861</a></li>
         </ol>
+        </body>
 </article>
 </html>
