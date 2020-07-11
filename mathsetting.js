@@ -1,4 +1,4 @@
-window.MathJax = {
+MathJax = {
     tex:{
         tags: 'ams',
         macros: {
@@ -10,12 +10,13 @@ window.MathJax = {
             iIm: "{\\mathrm {Im}}",
             End: "{\\mathrm {End}}",
             Ind:"{\\mathrm {Ind}}",
-        }
+        },
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    "HTML-CSS": {
+        preferredFont: "STIX"
+    }
+    svg:{
+        fontCache: 'global'
     }
 };
-
-MathJax.Hub.Config({
-        "HTML-CSS": {
-            fonts: ["STIX"]
-        }
-    });

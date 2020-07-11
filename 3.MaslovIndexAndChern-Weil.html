@@ -2,13 +2,10 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-        </script>
-        <script type="text/javascript" async
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
-            </script>
     <script src="mathsetting.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </script>
+    </script>
     <script>
         document.getElementById('counter').innerHTML = i;
     </script>
@@ -46,7 +43,7 @@
         \Pi_1 (\mathcal{L} (V))\rightarrow\frac{\mathbb{Z}}{2},
         $$
         that is, associated to any path \(\gamma\) in \(\mathcal{L} (V)\) a half-integer \(\mu (\gamma) \). When we are considering loops in this Lagrangian Grassmannian, we would get an integer, which by Arnold comes from the pairing of the homology class \(\gamma\in H_1 (\mathcal{L} (V),\mathbb{Z})\) with some cohomology class \(\mu\in H^1 (\mathcal{L} (V),\mathbb{Z})\). This class \(\mu\) is called the <b class="textbf">Maslov class</b> and the pairing \(\mu (\gamma)\) is called the <b class="textbf">Maslov index</b> of \(\gamma\). 
-        <p><div class="s lemma"></div>Consider the group homomorphism \(\det\colon\mathrm{U} (V)\to\mathbb{S}^1\). This homomorphism descends to the homogeneous space \(\det\colon\mathcal{L} (V)= U(V)/\mathrm{O} (V)\to\mathbb{S}^1\) and its induced map on \(\pi_1 \) coincides with the Maslov index \(\mu\).</p>
-        
+        <p><div class="s lemma"></div>Consider the group homomorphism \(\det\colon\mathrm{U} (V)\to\mathbb{S}^1\). This homomorphism descends to the homogeneous space \(\det\colon\mathcal{L} (V)= U(V)/\mathrm{O} (V)\to\mathbb{S}^1\) and its induced map \(\det_{\ast}\) on \(\pi_1 \) coincides with the Maslov index \(\mu\).</p>
+        <p class="proof">You could find it in [<a href="seminar-Riemann-Roch.html#Li20">14</a>].</p>
     </body>
 </article>
