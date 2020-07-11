@@ -19,3 +19,5 @@ MathJax.Hub.Config({
         },
 },
 });
+
+MathJax.Ajax.loadComplete("https://github.com/SYLiu-TheWildCat/Seminar-Webpage.github.io/blob/master/mathsetting.js");
