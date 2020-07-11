@@ -2,8 +2,31 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX:{
+        equationNumbers: {autoNumber: "AMS" },
+        Macros: {
+            im: "{\\mathrm {im}}",
+            dvol: "{\\mathrm {dvol}}",
+            index: "{\\mathrm {index}}",
+            Hom: "{\\mathrm {Hom}}",
+            diff: "{\\mathrm {d}}",
+            iIm: "{\\mathrm {Im}}",
+            End: "{\\mathrm {End}}",
+            Ind:"{\\mathrm {Ind}}",
+        },
+        "HTML-CSS" : {
+            availableFonts : ["Latin Modern"],
+            preferredFont : "Latin Modern",
+            webFont : "STIX-Web",
+            imageFont : null
+        },
+},
+});
+    </script>
     <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML,https://github.com/SYLiu-TheWildCat/Seminar-Webpage.github.io/blob/master/mathsetting.js">
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
         </script>
     <script>
         document.getElementById('counter').innerHTML = i;

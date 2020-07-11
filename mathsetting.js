@@ -1,6 +1,6 @@
 MathJax.Hub.Config({
     TeX:{
-        equationnumbers: {autoNumber: "AMS" },
+        equationNumbers: {autoNumber: "AMS" },
         Macros: {
             im: "{\\mathrm {im}}",
             dvol: "{\\mathrm {dvol}}",
@@ -19,5 +19,3 @@ MathJax.Hub.Config({
         },
 },
 });
-
-MathJax.Ajax.loadComplete("https://github.com/SYLiu-TheWildCat/Seminar-Webpage.github.io/blob/master/mathsetting.js");
