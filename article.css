@@ -69,6 +69,11 @@
         div.s.crl::after{
             content: ".";
         }
+        div.scap{
+            float: left;
+            margin-right: 2em;
+            font-variant: small-caps;
+        }
         b.textbf{
             font-weight: bold;
             margin-right: 0ex;
@@ -152,6 +157,9 @@
         }
         ol.thm li::before{
             content: "("counter(thmpart,lower-roman)")";
+        }
+        ul.thm{
+            list-style-type: none;
         }
         a{
             color: violet;

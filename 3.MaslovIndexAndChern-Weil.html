@@ -53,6 +53,9 @@ tex2jax: {
         div.s.crl::before{
             content: "3." counter(statement) "." "Corollary";
         }
+        div.s.prp::before{
+            content: "3." counter(statement) "." "Proposition";
+        }
         h2.section::before{
             content: "3" counter(sec,lower-alpha)")";
         }
@@ -84,7 +87,27 @@ tex2jax: {
 
         <p>In this sense of isomorphism, we have the following characterization:</p>
 
-        <p><div class="s theorem"></div>There is a unique map $\mu$ from the space of all bundle pairs over a compact Riemann surface $\Sigma$ to $\mathbb{Z}$ such that the following axioms are satisfied:
+        <p><div class="s theorem"></div>There is a unique map $\mu$ from the space of all bundle pairs over a compact Riemann surface $\Sigma$ to $\mathbb{Z}$ such that the following axioms are satisfied:<br>
+            <ul class="thm">
+                <li><div class="scap">(Isomorphism)</div> Let $\Phi\colon E_1\to E_2$ be an isomorphism of complex vector bundles covering an orientation-preserving diffeomorphism $\phi\colon\Sigma_1\to\Sigma_2$ of compact Riemann surfaces with boundary, and let $F_1\subseteq E_1\vert_{\partial\Sigma_1}$ be a totally real subbundle, then we have $\mu (E_1 ,F_1)=\mu (E_2 ,\Phi (F_1))$. </li>
+                <li><div class="scap">(Direct Sum)</div> Let $(E_1 ,F_1)$ and $(E_2 ,F_2)$ be two bundle pairs over the same compcat Riemann surface $\Sigma$, then we have $\mu (E_1 ,F_1 )+\mu (E_2,F_2)=\mu (E_1\oplus E_2 ,F_1\oplus F_2)$. </li>
+<li><div class="scap">(Composition)</div> Let $\Sigma_{02} =\Sigma_{01}\cup\Sigma_{12}$ be a composition of cobordisms(we will introduce this concept in the sequel), and let $(E_{ij} ,F_{ij})$ be the corresponding bundle pairs, then $\mu (E_{01} ,F_{01} )+\mu (E_{12} ,F_{12} )=\mu (E_{02} ,F_{02} )$.</li>
+<li><div class="scap">(Normalization)</div> If $\Sigma =\mathbb{D}$ is the closed unit disk with boundary $\mathbb{S}^1$, and $E=\mathbb{D}\times\mathbb{C}$ the trivial line bundle with totally real subbundle given by $F_z=\mathbb{R} e^{ik\theta /2}$ for $z=e^{i\theta}\in\mathbb{S}^1$, then\[
+    \mu (D\times\mathbb{C} ,F)=k.\]</li>
+            </ul>
         </p>
+        <p>And the boundary Maslov index has the following important property that would be used in our proof:</p>
+
+        <p><div class="s prp"></div>The boundary Maslov index satisfies the following:
+        <ul class="thm">
+            <li><div class="scap">(Trivial Bundle)</div>If $\partial\Sigma\neq\emptyset$ and $E=\Sigma\times\mathbb{C}^n$, then \[
+            \mu (\Sigma\times\mathbb{C}^n,F)=\mu(\Lambda)
+        \]
+    where $\Lambda$ is defined by $\Lambda (z)=F_z$ for $z\in\partial\Sigma$.</li>
+    <li><div class="scap">(Chern Class)</div>If $\partial\Sigma =\emptyset$, then $\mu (E,\emptyset )$ is twice the value of the first Chern class $c_1 (E)\in H^2 (\Sigma)$ on the fundamental class $[\Sigma]\in H_2 (\Sigma)$:
+    \[
+\mu (E,\emptyset )=2\langle c_1 (E),[\Sigma ]\rangle.
+\]</li>
+        </ul></p>
     </body>
 </article>
