@@ -63,6 +63,7 @@ tex2jax: {
 </head>
 <article>
     <div class="sidenav"><a href="#boundary-Maslov-index">3a) The Boundary Maslov Index.</a>
+        <a href="#pair-of-pants-induction">3b) Pair-of-Pants Induction.</a>
     <a href="seminar-Riemann-Roch.html">Back to Homepage</a></div>
     <body>
         <h1>&#8546. The Maslov Index and Chern-Weil Theory.</h1>
@@ -109,5 +110,20 @@ tex2jax: {
 \mu (E,\emptyset )=2\langle c_1 (E),[\Sigma ]\rangle.
 \]</li>
         </ul></p>
+        <p>We want to prove these theorems. First of all, note that compact Riemann surface $\Sigma$ with boundary $\partial\Sigma$ has the homotopy type of a bunch of circles, so we could guess any bundle pair $(E,F)$ over $\Sigma$ would have nice classification results. In fact, for real vector bundles over a circle, it is well-known that there are only two types of them, classified only by orientation, hence for $F$, there exists $(n-1)$ everywhere linearly independent sections $s_1 ,\dotsb ,s_{n-1}$ and a line bundle $L\to\partial\Sigma$ such that \[
+            F=L\oplus\bigoplus_{i=1}^{n-1}\mathbb{R} s_i.
+            \]
+            We call this a <b class="textbf">partial framing</b> of $F$.
+        </p>
+
+        <p><div class="s prp"></div>Let $(E,F)$ be a bundle pair over $\Sigma$ equipped with a partial framing $(L;s_1 ,\dotsb, s_{n-1})$ on $F$, then there exists a global trivialization $\Phi\colon E\to\Sigma\times\mathbb{C}^n$ such that $\Phi (s_i) =e_i$ and $\Phi (L)=\sqrt{\lambda (z)}\mathbb{R}$ where $\lambda\colon\partial\Sigma\to\mathbb{S}^1$ is a smooth function and $\{e_i\}$ is the set of coordinate functions on $\mathbb{C}^n$. </p>
+
+        <p class="proof">See my thesis [<a href="seminar-Riemann-Roch.html#Li20">14</a>].</p>
+
+        <p><div class="s crl"></div>Let $(E,F)$ be a rank one bundle pair on $\mathbb{D}$, then there exists a trivialization $\Phi\colon E\to\mathbb{D}\times\mathbb{C} $ such that $\Phi (F_z)=\mathbb{R} e^{ik\theta /2}$ where $z=e^{i\theta}\in\mathbb{S}^1$. </p>
+
+        <p>To proceed the proof, we need a technique called "pair-of-pants induction". This is a result of classifying compact Riemann surfaces with boundary in the topological sense, via Morse theory.</p>
+
+        <h2 class="section" id="pair-of-pants-induction">Pair-of-Pants Induction</h2>
     </body>
 </article>

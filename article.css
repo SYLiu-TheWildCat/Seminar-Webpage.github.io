@@ -73,6 +73,7 @@
             float: left;
             margin-right: 2em;
             font-variant: small-caps;
+            font-size: 13pt;
         }
         b.textbf{
             font-weight: bold;
@@ -158,8 +159,9 @@
         ol.thm li::before{
             content: "("counter(thmpart,lower-roman)")";
         }
-        ul.thm{
+        ul.thm>li{
             list-style-type: none;
+            margin-bottom: 10px;
         }
         a{
             color: violet;
