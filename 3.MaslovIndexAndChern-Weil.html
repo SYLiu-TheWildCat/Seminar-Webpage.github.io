@@ -2,7 +2,32 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <script type="text/x-mathjax-config" src="mathsetting.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+    TeX:{
+        equationNumbers: {autoNumber: "AMS" },
+        Macros: {
+            im: "{\\mathrm {im}}",
+            dvol: "{\\mathrm {dvol}}",
+            index: "{\\mathrm {index}}",
+            Hom: "{\\mathrm {Hom}}",
+            diff: "{\\mathrm {d}}",
+            iIm: "{\\mathrm {Im}}",
+            End: "{\\mathrm {End}}",
+            Ind:"{\\mathrm {Ind}}",
+        },
+        "HTML-CSS" : {
+            availableFonts : ["Latin Modern"],
+            preferredFont : "Latin Modern",
+            webFont : "STIX-Web",
+            imageFont : null
+        },
+},
+tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});</script>
     <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
@@ -40,19 +65,26 @@
         <h1>&#8546. The Maslov Index and Chern-Weil Theory.</h1>
         <p>In the previous series of talks we have proved the first part of Riemann-Roch theorem <a href="1.Introduction.html#generalized-Riemann-Roch">1.12</a>, and in this series we aim to introduce the concept of boundary Maslov index, which serves as the Fredholm index stated in this theorem. Then we will try to give a proof of the second part of Riemann-Roch theorem using properties of Maslov index and Morse theory.</p>
 
-        <h2 class="section" id="boundary-Maslov-index">The Boundary Maslov Index</h2> We start with an exposition of the classical Maslov index. It is originally studied by Maslov and then developed by Arnold in his paper [<a href="seminar-Riemann-Roch.html#Ar67">15</a>] where they used it to give another conditions for quantizations. In their setting, let \((V,\omega )\) be a symplectic vector space of dimension \(2n\) where \(\omega\) is some symplectic form, and we are considering the space \(\mathcal{L} (V)\) of all Lagrangian subspace of \(V\). This space is called the <b class="textbf">Lagrangian Grassmannian</b> of \(V\). On the complex side, given a complex vector space \((W,
-        J)\) where \(J\) is the complex structure, we have the space \(\mathcal{R} (W)\) of all totally real subspaces of \(W\). With a group-theoretic point of view, we know that they are all homogeneous spaces: \(\mathcal{L} (V)=\mathrm{Sp} (V)/\mathrm{GL} (n,\mathbb{R})\), and \(\mathcal{R} (W)=\mathrm{GL} (W,\mathbb{C})/\mathrm{GL} (n,\mathbb{R})\). The Maslov index gives a map
+        <h2 class="section" id="boundary-Maslov-index">The Boundary Maslov Index</h2> We start with an exposition of the classical Maslov index. It is originally studied by Maslov and then developed by Arnold in his paper [<a href="seminar-Riemann-Roch.html#Ar67">15</a>] where they used it to give another conditions for quantizations. In their setting, let $(V,\omega )$ be a symplectic vector space of dimension $2n$ where $\omega$ is some symplectic form, and we are considering the space $\mathcal{L} (V)$ of all Lagrangian subspace of $V$. This space is called the <b class="textbf">Lagrangian Grassmannian</b> of $V$. On the complex side, given a complex vector space $(W,
+        J)$ where $J$ is the complex structure, we have the space $\mathcal{R} (W)$ of all totally real subspaces of $W$. With a group-theoretic point of view, we know that they are all homogeneous spaces: $\mathcal{L} (V)=\mathrm{Sp} (V)/\mathrm{GL} (n,\mathbb{R})$, and $\mathcal{R} (W)=\mathrm{GL} (W,\mathbb{C})/\mathrm{GL} (n,\mathbb{R})$. The Maslov index gives a map
         $$
         \Pi_1 (\mathcal{L} (V))\rightarrow\frac{\mathbb{Z}}{2},
         $$
-        that is, associated to any path \(\gamma\) in \(\mathcal{L} (V)\) a half-integer \(\mu (\gamma) \). When we are considering loops in this Lagrangian Grassmannian, we would get an integer, which by Arnold comes from the pairing of the homology class \(\gamma\in H_1 (\mathcal{L} (V),\mathbb{Z})\) with some cohomology class \(\mu\in H^1 (\mathcal{L} (V),\mathbb{Z})\). This class \(\mu\) is called the <b class="textbf">Maslov class</b> and the pairing \(\mu (\gamma)\) is called the <b class="textbf">Maslov index</b> of \(\gamma\). Recall that a symplectic space \(V\) admits naturally a compactible complex structure \(J\) so that the space becomes a complex vector space, hence we can talk about both \(\mathcal{R} (n)\) and \(\mathcal{L} (n)\) on \(V\).
-        <p><div class="s lemma"></div>\(\mathcal{L} (V)\) is a deformation retract of \(\mathcal{R} (V)\). There exists a map \(\det^2\colon\mathcal{L} (V)\to\mathbb{S}^1\) such that its induced map \(\det_{\ast}^2\) on \(H_1 \) is an isomorphism and this coincides with the Maslov index \(\mu\).</p>
+        that is, associated to any path $\gamma$ in $\mathcal{L} (V)$ a half-integer $\mu (\gamma) $. When we are considering loops in this Lagrangian Grassmannian, we would get an integer, which by Arnold comes from the pairing of the homology class $\gamma\in H_1 (\mathcal{L} (V),\mathbb{Z})$ with some cohomology class $\mu\in H^1 (\mathcal{L} (V),\mathbb{Z})$. This class $\mu$ is called the <b class="textbf">Maslov class</b> and the pairing $\mu (\gamma)$ is called the <b class="textbf">Maslov index</b> of $\gamma$. Recall that a symplectic space $V$ admits naturally a compactible complex structure $J$ so that the space becomes a complex vector space, hence we can talk about both $\mathcal{R} (n)$ and $\mathcal{L} (n)$ on $V$.
+        <p><div class="s lemma"></div>$\mathcal{L} (V)$ is a deformation retract of $\mathcal{R} (V)$. There exists a map $\det^2\colon\mathcal{L} (V)\to\mathbb{S}^1$ such that its induced map $\det_{\ast}^2$ on $H_1 $ is an isomorphism and this coincides with the Maslov index $\mu$.</p>
         <p class="proof">You could find it in [<a href="seminar-Riemann-Roch.html#Li20">14</a>].</p>
 
-        <p>With this map \(\det^2\), we could then consider the similar invariant on the space \(\mathcal{R} (V)\). The map \(\det^2\) here is a group homomorphism \(\det^2\colon\mathcal{R} (V)\to\mathbb{C}^{\ast}\), hence inducing a map on first homology group \(\det_{\ast}^2\colon H_1 (\mathcal{R} (V))\to\mathbb{Z}\). They will give the same invariant by this lemma, and in this case we just drop the symplectic form and consider the space \(\mathcal{R} (V)\). So we have the following Corollary:</p>
+        <p>With this map $\det^2$, we could then consider the similar invariant on the space $\mathcal{R} (V)$. The map $\det^2$ here is a group homomorphism $\det^2\colon\mathcal{R} (V)\to\mathbb{C}^{\ast}$, hence inducing a map on first homology group $\det_{\ast}^2\colon H_1 (\mathcal{R} (V))\to\mathbb{Z}$. They will give the same invariant by this lemma, and in this case we just drop the symplectic form and consider the space $\mathcal{R} (V)$. So we have the following Corollary:</p>
 
-        <p><div class="s crl"></div>Any two loops in \(\mathcal{R} (n)\) and \(\mathcal{L} (n)\) are homotopic if and only if they have the same Maslov index.</p>
+        <p><div class="s crl"></div>Any two loops in $\mathcal{R} (n)$ and $\mathcal{L} (n)$ are homotopic if and only if they have the same Maslov index.</p>
 
-        
+        <p>Now we are going to construct boundary Maslov index of the bundle pair $(E,F)$ over the compact Riemann surface $\Sigma$ with boundary $\partial\Sigma$. Since $\Sigma$ is two-dimensional, its boundary is a one-dimensional closed manifold and is hence a disjoint union of circles. Therefore a totally real subbundle $F\subseteq E\vert_{\partial\Sigma}$ on the boundary is a map $\Lambda\colon\partial\Sigma\to\mathcal{R} (n)$,and we could talk about the Maslov index $\mu (\Lambda)$. It turns out that this index nearly completely characterized bundle pairs.</p>
+
+        <p><div class="s definition"></div>Two bundle pairs $(E_1 ,F_1)$ and $(E_2 ,F_2)$ are <b class="textbf">isomorphic</b> if there exists a complex-linear bundle isomorphism $\Phi\colon E_1\to E_2$ such that $\Phi (F_1)=F_2$.</p>
+
+        <p>In this sense of isomorphism, we have the following characterization:</p>
+
+        <p><div class="s theorem"></div>There is a unique map $\mu$ from the space of all bundle pairs over a compact Riemann surface $\Sigma$ to $\mathbb{Z}$ such that the following axioms are satisfied:
+        </p>
     </body>
 </article>
