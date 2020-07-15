@@ -88,7 +88,7 @@ tex2jax: {
 
         <p>In this sense of isomorphism, we have the following characterization:</p>
 
-        <p><div class="s theorem"></div>There is a unique map $\mu$ from the space of all bundle pairs over a compact Riemann surface $\Sigma$ to $\mathbb{Z}$ such that the following axioms are satisfied:<br>
+        <p><div class="s theorem" id="uniqueness-of-Maslov-index"></div>There is a unique map $\mu$ from the space of all bundle pairs over a compact Riemann surface $\Sigma$ to $\mathbb{Z}$ such that the following axioms are satisfied:<br>
             <ul class="thm">
                 <li><div class="scap">(Isomorphism)</div> Let $\Phi\colon E_1\to E_2$ be an isomorphism of complex vector bundles covering an orientation-preserving diffeomorphism $\phi\colon\Sigma_1\to\Sigma_2$ of compact Riemann surfaces with boundary, and let $F_1\subseteq E_1\vert_{\partial\Sigma_1}$ be a totally real subbundle, then we have $\mu (E_1 ,F_1)=\mu (E_2 ,\Phi (F_1))$. </li>
                 <li><div class="scap">(Direct Sum)</div> Let $(E_1 ,F_1)$ and $(E_2 ,F_2)$ be two bundle pairs over the same compcat Riemann surface $\Sigma$, then we have $\mu (E_1 ,F_1 )+\mu (E_2,F_2)=\mu (E_1\oplus E_2 ,F_1\oplus F_2)$. </li>
@@ -99,7 +99,7 @@ tex2jax: {
         </p>
         <p>And the boundary Maslov index has the following important property that would be used in our proof:</p>
 
-        <p><div class="s prp"></div>The boundary Maslov index satisfies the following:
+        <p><div class="s prp" id="property-of-boudary-Maslov-index"></div>The boundary Maslov index satisfies the following:
         <ul class="thm">
             <li><div class="scap">(Trivial Bundle)</div>If $\partial\Sigma\neq\emptyset$ and $E=\Sigma\times\mathbb{C}^n$, then \[
             \mu (\Sigma\times\mathbb{C}^n,F)=\mu(\Lambda)
@@ -148,6 +148,24 @@ tex2jax: {
 
         <img src="cobordism2.png" alt="The Elementary Cobordism in Dimension 2" class="center">
 
-        <p>In this picture, the saddle point is our critical point, and the green lines are the union of stable and unstable manifolds for this critical point.</p>
+        <p>In this picture, the saddle point is our critical point, and the green lines are the union of stable and unstable manifolds for this critical point. We write $K_p$ for this union for a given critical point $p$. We are going to state that we could rearrange these critical points by modifying Morse functions such that $K_p\cap K_q=\emptyset $ for each pair of critical points $p,q$.</p>
+
+        <p><div class="s theorem">(Rearrangement)</div>Assume that $W\colon M\to N$ is a cobordism with a Morse function $f\colon W\to\mathbb{R}$ with two critical points $p,p'$ such that for some given gradient-like vector field $\xi$, $K_p\cap K_{p'}=\emptyset$, then for given numbers $a,a'\in\mathbb{R}$, there exists a Morse function $g$ such that $g(p)=a$, $g(p)=a'$, $g$ coincides with $f$ plus some constant near $p$ and $p'$ and equals $f$ near the boundary.</p>
+
+        <p class="proof">See [<a href="seminar-Riemann-Roch.html#Mi65">18</a>].</p>
+
+        <p>This theorem tells us that once we know $K_p$ and $K_{p'}$ are distinct, then we could rearrange the critical points arbitrarily as we wish. This can be generalized easily to several critical points, but in this case we require these set of critical points lie completely in two level sets, and we can only rearrange the two sets of critical points lying completely in exactly one level set. When will this condition be satisfied? The subsequent conclusion in Milnor's lecture is the following.</p>
+
+        <p><div class="s theorem"></div>Let $f$ be a Morse function defined on the cobordism $W$ such that $f$ has exactly two critical points $p,p'$ such that $\Ind (p)\geq\Ind (p')$ and that $f(p)\le f(p')$, then it is possible to alter the gradient-like vector field $\xi$ such that $p$ and $p'$ are still critical points with $S_R\cap S_L'=\emptyset$. The general result concerning two sets of critical points with only two Morse index $\lambda$ and $\lambda'$ is also true.</p>
+
+        <p>With these two results and induction, we can then rearrange any cobordism $W\colon M\Rightarrow N$ to a composition of cobordisms $M\Rightarrow M_1\Rightarrow M_2\Rightarrow\dotsb\Rightarrow M_k$ such that each cobordism admits a Morse function with exactly one critical level with every critical points the same Morse index, and the Morse index are increasing as $i$ increases from $1$ to $k$. Then we could further rearrange these critical points of the same index so that we could further decompose the cobordism $M\Rightarrow M_1$ into $M\Rightarrow M_{11}\Rightarrow\dotsb\Rightarrow M_{1k}=M_{11}$, where each cobordism is an elementary cobordism. In other words, we have</p>
+
+        <p><div class="s prp"></div>Let $M$ be an $m$-dimensional manifold and $\lambda\leq m$ is a positive integer. Then a cobordism $M\Rightarrow M_1$ with a Morse function $f$ with only one critical level $a$ with $k$ critical points of the same Morse index $\lambda$ is diffeomorphic to the manifold $W$ given by attaching $k$ handles of dimension $m-\lambda +1$ one-by-one to $M$.</p>
+
+        <p>We also call this a <b class="textbf">surgery of type $(\lambda ,n-\lambda )$</b>. Now we apply these results to compact Riemann surfaces. Note that in this case, there are only three available Morse indices: $0,1$ and $2$, and we know that a critical point $p$ of Morse index $0$ must be the starting point(after rearrangements) of this Riemann surface and critical points of Morse index $2$ must be the endpoint. If we assume a compact Riemann surface $\Sigma$ to have non-trivial boundaries, which has more than two connected components, then it can represented by a cobordism consisting only on elementary cobordisms, and in this case, there is only one type of elementary cobordism, just as shown in the figure above. The next step is to prove that the picture is exactly the elementary cobordism, i.e. attaching a handle of dimension $2$. Note that the above picture is the space $\bar{\mathbb{D}}^2 $ subtracting two smaller disjoint open disks. This diffeomorphism is proved in chpater 9 of Hirsch's book [<a href="seminar-Riemann-Roch.html#Hi76">19</a>]. So finally we have the following pair-of-pants induction:</p>
+
+        <p><div class="s prp"></div>Any compact Riemann surface can be decomposed into a union of disks and elementary cobordisms, and if property $P$ is preserved under composition of cobordisms and is held on disks and elementary cobordisms, then property $P$ holds for all compact Riemann surfaces.</p>
+
+        <h2 class="section" id="proof-of-main-theorem">Proof of the Main Theorem</h2> Now we could give a proof of the main theorems <a href="#uniqueness-of-Maslov-index">3.4</a> and <a href="#property-of-boundary-Maslov-index">3.5</a> using pair-of-pants decomposition. 
     </body>
 </article>
