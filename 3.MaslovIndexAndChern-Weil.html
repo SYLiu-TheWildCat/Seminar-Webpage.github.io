@@ -134,7 +134,7 @@ tex2jax: {
         
         <p>We call the integer $i$ the Morse index of $f$ and written $\Ind_p (f)$. This lemma tells us that the non-degenerate critical points of any smooth functions are isolated, hence when $M$ is compact, there are only finitely many of them. The reason why the critical points play an important role is the following:</p>
 
-        <p><div class="s prp"></div>Let $f$ be a smooth function on $M$ and $a\in\mathbb{R}$ is in the image of $f$. Then if $a$ is a regular value, we have a diffeomorphism $f^{-1} (-\infty, a-\varepsilon ]\cong f^{-1} (-\infty ,a+\varepsilon ]$; if $a$ is a critical value, $f^{-1} (-\infty ,a+\varepsilon ]$ is diffeotopic to $f^{-1} (-\infty ,a-\varepsilon ]$ attaching a cell of index $\Ind_p (f)$ where $p$ is the critical point of $f$ such that $f(p)=a$.</p>
+        <p><div class="s prp"></div>Let $f$ be a smooth function on $M$ and $a\in\mathbb{R}$ is in the image of $f$. Then if $a$ is a regular value, we have a diffeomorphism $f^{-1} (-\infty, a-\varepsilon ]\cong f^{-1} (-\infty ,a+\varepsilon ]$; if $a$ is a critical value, $f^{-1} (-\infty ,a+\varepsilon ]$ is diffeotopic to $f^{-1} (-\infty ,a-\varepsilon ]$ attaching a cell of dimension $\Ind_p (f)$ where $p$ is the critical point of $f$ such that $f(p)=a$.</p>
 
         <p>This characterization of sublevel set is essential in our discussion. Now we introduce an application of the Morse theory, given also in Milnor's famous book [<a href="seminar-Riemann-Roch.html#Mi65">18</a>]. We start with a topological definition.</p>
 
@@ -142,6 +142,12 @@ tex2jax: {
 
         <img src="cobordism.png" alt="The Cobordism Between Two Manifolds" style="width: 400px;height: 200px;" class="center">
 
-        <p>Cobordism can be studied via Morse theory. In this context, for a differentiable manifold $W$ with boudnary, we require a Morse function $f$ on $W$ to satisfy a further property that the value of $f$ on a connected component of $\partial W$ is the same, and there are no critical points on the boundary, so our basic results stated above still holds in this context.</p>
+        <p>Cobordism can be studied via Morse theory. In this context, for a differentiable manifold $W$ with boudnary, we require a Morse function $f$ on $W$ to satisfy a further property that the value of $f$ on a connected component of $\partial W$ is the same, and there are no critical points on the boundary, so our basic results stated above still holds in this context. Then we could let $a$ go from $-\infty $ to $\infty$. When $a$ passes some critical value, by the previous discussion we know that the corresponding sublevel set is given by attaching some cells of dimension equal to the Morse index of each critical point, so two cobordant manifold do not necessarily have the same homotopy type. When they are diffeotopic, there is a <b class="textbf">trivial cobordism</b> bewteen them, given directly as the product manifold $W=M\times I$, where $I$ is the unit interval.</p>
+
+        <p><div class="s definition"></div>An <b class="textbf">elementary cobordism</b> is a cobordism $W\colon M\Rightarrow N$ such that there exists a Morse function $f$ on $W$ with only one critical points.</p>
+
+        <img src="cobordism2.png" alt="The Elementary Cobordism in Dimension 2" class="center">
+
+        <p>In this picture, the saddle point is our critical point, and the green lines are the union of stable and unstable manifolds for this critical point.</p>
     </body>
 </article>
