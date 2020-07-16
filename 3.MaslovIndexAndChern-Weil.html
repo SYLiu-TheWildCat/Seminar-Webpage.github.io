@@ -63,7 +63,7 @@ tex2jax: {
 </head>
 <article>
     <div class="sidenav"><a href="#boundary-Maslov-index">3a) The Boundary Maslov Index.</a>
-        <a href="#pair-of-pants-induction">3b) Pair-of-Pants Induction.</a>
+        <a href="#pair-of-pants-induction">3b) Pair-of-Pants Induction.</a><a href="#proof-of-main-theorem">3c) Proof of the Main Theorem.</a>
     <a href="seminar-Riemann-Roch.html">Back to Homepage</a></div>
     <body>
         <h1>&#8546. The Maslov Index and Chern-Weil Theory.</h1>
@@ -116,7 +116,7 @@ tex2jax: {
             We call this a <b class="textbf">partial framing</b> of $F$.
         </p>
 
-        <p><div class="s prp"></div>Let $(E,F)$ be a bundle pair over $\Sigma$ equipped with a partial framing $(L;s_1 ,\dotsb, s_{n-1})$ on $F$, then there exists a global trivialization $\Phi\colon E\to\Sigma\times\mathbb{C}^n$ such that $\Phi (s_i) =e_i$ and $\Phi (L)=\sqrt{\lambda (z)}\mathbb{R}$ where $\lambda\colon\partial\Sigma\to\mathbb{S}^1$ is a smooth function and $\{e_i\}$ is the set of coordinate functions on $\mathbb{C}^n$. </p>
+        <p><div class="s prp" id="normalization-of-bundle-pairs"></div>Let $(E,F)$ be a bundle pair over $\Sigma$ equipped with a partial framing $(L;s_1 ,\dotsb, s_{n-1})$ on $F$, then there exists a global trivialization $\Phi\colon E\to\Sigma\times\mathbb{C}^n$ such that $\Phi (s_i) =e_i$ and $\Phi (L)=\sqrt{\lambda (z)}\mathbb{R}$ where $\lambda\colon\partial\Sigma\to\mathbb{S}^1$ is a smooth function and $\{e_i\}$ is the set of coordinate functions on $\mathbb{C}^n$. </p>
 
         <p class="proof">See my thesis [<a href="seminar-Riemann-Roch.html#Li20">14</a>].</p>
 
@@ -140,13 +140,23 @@ tex2jax: {
 
         <p><div class="s definition"></div>Let $M,N$ be two closed manifold of dimension $n$. A <b class="textbf">cobordism</b> from $M$ to $N$ is a compact manifold $C\colon M\Rightarrow N$ with boundary $\partial C=M\coprod\bar{N}$, where $\bar{N}$ is $N$ with the orientation reversed.</p>
 
+        <figure>
         <img src="cobordism.png" alt="The Cobordism Between Two Manifolds" style="width: 400px;height: 200px;" class="center">
+        <center>
+            <figcaption>The Cobordism Between Two Manifolds</figcaption>
+        </center>
+        </figure>
 
         <p>Cobordism can be studied via Morse theory. In this context, for a differentiable manifold $W$ with boudnary, we require a Morse function $f$ on $W$ to satisfy a further property that the value of $f$ on a connected component of $\partial W$ is the same, and there are no critical points on the boundary, so our basic results stated above still holds in this context. Then we could let $a$ go from $-\infty $ to $\infty$. When $a$ passes some critical value, by the previous discussion we know that the corresponding sublevel set is given by attaching some cells of dimension equal to the Morse index of each critical point, so two cobordant manifold do not necessarily have the same homotopy type. When they are diffeotopic, there is a <b class="textbf">trivial cobordism</b> bewteen them, given directly as the product manifold $W=M\times I$, where $I$ is the unit interval.</p>
 
         <p><div class="s definition"></div>An <b class="textbf">elementary cobordism</b> is a cobordism $W\colon M\Rightarrow N$ such that there exists a Morse function $f$ on $W$ with only one critical points.</p>
 
+        <figure>
         <img src="cobordism2.png" alt="The Elementary Cobordism in Dimension 2" style="width: 200px; height: 200px;" class="center">
+        <center>
+        <figcaption>The Elementary Cobordism in Dimension 2</figcaption>
+        </center>
+        </figure>
 
         <p>In this picture, the saddle point is our critical point, and the green lines are the union of stable and unstable manifolds for this critical point. We write $K_p$ for this union for a given critical point $p$. We are going to state that we could rearrange these critical points by modifying Morse functions such that $K_p\cap K_q=\emptyset $ for each pair of critical points $p,q$.</p>
 
@@ -166,6 +176,29 @@ tex2jax: {
 
         <p><div class="s prp"></div>Any compact Riemann surface can be decomposed into a union of disks and elementary cobordisms, and if property $P$ is preserved under composition of cobordisms and is held on disks and elementary cobordisms, then property $P$ holds for all compact Riemann surfaces.</p>
 
-        <h2 class="section" id="proof-of-main-theorem">Proof of the Main Theorem</h2> Now we could give a proof of the main theorems <a href="#uniqueness-of-Maslov-index">3.4</a> and <a href="#property-of-boundary-Maslov-index">3.5</a> using pair-of-pants induction. The pair-of-pants induction readily tells us that the four axioms uniquely determine a boundary Maslov index, so it suffices for us to verify the four axioms for $\mu (\Sigma)=\mu (\partial\Sigma)$. 
+        <h2 class="section" id="proof-of-main-theorem">Proof of the Main Theorem</h2> Now we could give a proof of the main theorems <a href="#uniqueness-of-Maslov-index">3.4</a> and <a href="#property-of-boundary-Maslov-index">3.5</a> using pair-of-pants induction. The pair-of-pants induction readily tells us that the four axioms uniquely determine a boundary Maslov index, so it suffices for us to verify the four axioms for $\mu (\Sigma)=\mu (\partial\Sigma)$. We split the proof into several lemmas. 
+
+        <p><div class="s lemma"></div>The Maslov index $\mu$ so-defined is independent of the choice of trivialization, hence is a well-defined topological invariant.</p>
+
+        <p class="proof">Two different trivializations of the bundle pair $(E,F)$ differ by a section $A\in\Gamma (\Sigma ,\mathrm{GL} (n,\mathbb{C} )$, whose restriction to the boundary induces a map $A_z\colon\mathcal{R} (n)\to\mathcal{R} (n)$ for each $z$. Note that in $\mathcal{R} (n)$ the boundary Maslov index $\mu$ can be written explicitly as the map $\deg (\rho\circ\Lambda )$ where $\rho\colon\mathcal{R} (n)\to\mathbb{S}^1$ is given by
+            \[
+                \rho (A\mathrm{GL} (n,\mathbb{R}))=\frac{\det (A^2)}{\det (A^{\ast} A)}. 
+            \]
+            Then by a direct calculation, since we must have $AF_1=F_2$ on the boundary, we have
+            \[
+            \rho (\Lambda_2 )=\rho (A\Lambda_1 )=\frac{\det (A^2)}{\det A^{\ast} A}\rho (\Lambda_2)=\rho (A)\rho (\Lambda_2)
+            \]
+            but since $A$ is defined on the whole surface $\Sigma$(and the sum of the boundary $\partial\Sigma$ is trivial in $H_1 (\Sigma)$), it follows that $\deg\rho (A)=0$ and therefore $\rho (\Lambda_1)=\rho (\Lambda_2 )$. 
+        </p>
+
+        The verification of isomorphism axiom is then trivial. The direct sum axiom follows from factorization of matrices.
+
+        <p><div class="s lemma"></div>The composition axiom holds for this index $\mu$.</p>
+
+        <p class="proof">It suffices to show that along the glued boundaries the index sum to $0$, but this follows from the induced orientation from manifold $\Sigma_{02}$, since this two boundary has opposite orientation.</p>
+
+        <div class="proof">Finally, it remains for us to show the normalization axiom. This follows from a direct computation, since we know that the index is given by composing $\rho$ with $\deg$.</div>
+
+        <div class="proof"><div class="pf">Proof of Theorem <a href="#property-of-boundary-Maslov-index">3.5</a></div>The trivial bundle axiom follows directly from theorem <a href="#uniqueness-of-Maslov-index">3.4</a> and Proposition <a href="#normalization-of-bundle-pairs">3.6</a>. For the Chern class axiom, it requires much more work. Firstly, we can decompose a compact Riemann surface $\Sigma$ into $\Sigma=\Sigma_1\cup\Sigma_2$ where this two subsurfaces has a common boundary, and we would like to compute the sum of the two index $\mu (E_1 ,F)+\mu (E_2, F)$ where $F$ is a totally real subbundle of $E\vert_{\partial\Sigma_1}$, and $E_1 ,E_2$ are corresponding restrictions of the complex vector bundle $E$. </div>
     </body>
 </article>

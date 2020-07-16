@@ -69,11 +69,35 @@
         div.s.crl::after{
             content: ".";
         }
+        div.pf{
+            font-weight: bold;
+            color: orangered;
+            float: left;
+            margin-left: 2em;
+            margin-right: 2ex;
+        }
+        div.pf::after{
+            content: ".";
+        }
         div.scap{
             float: left;
             margin-right: 2em;
             font-variant: small-caps;
             font-size: 13pt;
+        }
+        div.proof{
+            margin-top: 2em;
+            margin-left: 0em;
+        }
+        div.proof::after{
+            float: right;
+            border: 1px white solid;
+            display: block;
+            height: 14px;
+            width: 14px;
+            right: 0px;
+            bottom: 0px;
+            content: "";
         }
         b.textbf{
             font-weight: bold;
@@ -95,8 +119,8 @@
             content: "";
             border: 1px white solid;
             display: block;
-            height: 15px;
-            width: 15px;
+            height: 14px;
+            width: 14px;
             right: 0px;
             bottom: 0px;
         }
@@ -171,4 +195,8 @@
             margin-left: auto;
             margin-right: auto;
             width: 50%;
+        }
+        figcaption{
+            
+            color: gray;
         }
