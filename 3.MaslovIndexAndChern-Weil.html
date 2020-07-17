@@ -17,9 +17,9 @@
             Ind:"{\\mathrm {Ind}}",
         },
         "HTML-CSS" : {
-            availableFonts : ["Latin Modern"],
-            preferredFont : "Latin Modern",
-            webFont : "STIX-Web",
+            availableFonts : ["STIX"],
+            preferredFont : "STIX",
+            webFont : "STIX-web",
             imageFont : null
         },
 },
@@ -199,6 +199,23 @@ tex2jax: {
 
         <div class="proof">Finally, it remains for us to show the normalization axiom. This follows from a direct computation, since we know that the index is given by composing $\rho$ with $\deg$.</div>
 
-        <div class="proof"><div class="pf">Proof of Theorem <a href="#property-of-boundary-Maslov-index">3.5</a></div>The trivial bundle axiom follows directly from theorem <a href="#uniqueness-of-Maslov-index">3.4</a> and Proposition <a href="#normalization-of-bundle-pairs">3.6</a>. For the Chern class axiom, it requires much more work. Firstly, we can decompose a compact Riemann surface $\Sigma$ into $\Sigma=\Sigma_1\cup\Sigma_2$ where this two subsurfaces has a common boundary, and we would like to compute the sum of the two index $\mu (E_1 ,F)+\mu (E_2, F)$ where $F$ is a totally real subbundle of $E\vert_{\partial\Sigma_1}$, and $E_1 ,E_2$ are corresponding restrictions of the complex vector bundle $E$. </div>
+        <div class="proof"><div class="pf">Proof of Theorem <a href="#property-of-boundary-Maslov-index">3.5</a></div>The trivial bundle axiom follows directly from theorem <a href="#uniqueness-of-Maslov-index">3.4</a> and Proposition <a href="#normalization-of-bundle-pairs">3.6</a>. For the Chern class axiom, it requires much more work. Firstly, we can decompose a compact Riemann surface $\Sigma$ into $\Sigma=\Sigma_1\cup\Sigma_2$ where this two subsurfaces has a common boundary, and we would like to compute the sum of the two index $\mu (E_1 ,F)+\mu (E_2, F)$ where $F$ is a totally real subbundle of $E\vert_{\partial\Sigma_1}$, and $E_1 ,E_2$ are corresponding restrictions of the complex vector bundle $E$. Since $\Sigma_1$ and $\Sigma_2$ are compact Riemann surfaces with boundary, there are trivializations $\Phi_i\colon E_i\to\mathbb{C}^n$ sending $F$ to $F_i$, and by normalization we know that any vector bundle $E_i$ over compact Riemann surface $\Sigma_i$ with boundary splits as a direct sum of a complex line bundle and a trivial bundle, so WLOG, we can assume that $E$ is a complex line bundle and in this case, equip $E$ with an hermitian structure and consider sections $s_i$ on $E_i$ of norm $1$. Let $u\in\Gamma (X,\mathrm{GL} (n,\mathbb{C} )$ where $X=\Sigma_1\cap\Sigma_2$ such that $s_2 (z)=u(z)s_1 (z)$ for any $z\in X$, and let $\Lambda_i $ be the corresponding loop in $\mathcal{R} (n)$, then we have $\Lambda_2 =u\Lambda_1$ and therefore by applying $\deg\circ\rho$, we have
+    \[
+\mu (\Lambda_2 )=\mu (\Lambda_1)+2\deg u,
+\]
+since here we assume that $E$ is a complex line bundle and the norm of $u$, by construction, is $1$. In order to compute the degree of $u$, consider a given hermitian connection $\nabla$ on $E$, and let $\alpha_i =s_i^{-1}\nabla s_i$, then we know that $\diff\alpha_i =F^{\nabla}$ is the curvature of $\nabla$, and $\alpha_1\vert_X -\alpha_2\vert_X =u^{-1}\nabla u$. Now applying Chern-Weil theory, we have
+\[
+\begin{aligned}
+\langle c_1 (\Sigma ),[\Sigma ]\rangle &=\int_{\Sigma} F^{\nabla} =\int_{\Sigma_1}\diff\alpha_1+\int_{\Sigma_2 }\diff\alpha_2 =\int_X\alpha_1 -\int_X\alpha_2\\
+&=\int_X (\alpha_1 -\alpha_2 )=-\int_X u^{-1}\nabla u =-\deg u. 
+\end{aligned}
+\]
+Therefore $\mu (E_1 ,F)+\mu (E_2 ,F)=\mu (\Lambda_1 )-\mu (\Lambda_2)=2\langle c_1 (\Sigma ),[\Sigma ]\rangle $, as claimed.</div>
+
+<p>Finally, we prove the Corollary that the boundary Maslov index completely characterizes the bundle pair $(E,F)$.</p>
+
+<p><div class="s crl"></div>Two bundle pairs $(E_1 ,F_1)$ and $(E_2 ,F_2)$ over $\Sigma$ are isomorphic if and only if they have the same rank, $\mu (E_1 ,F_1 )=\mu (E_2 ,F_2)$, and for each component $C$ of $\partial\Sigma$, $F_1\vert_C$ and $F_2\vert_C$ are isomorphic.</p>
+
+<p class="proof">The "only if" part is trivial. For the "if" part, note that we have trivializations $\Phi_i\colon E_i\to\mathbb{C}^n$ if $\Sigma$ has non-empty boundary, and we can assume that $(E_i ,F_i)$ are line bundles. Pick $u\colon\partial\Sigma\to\mathrm{GL} (1,\mathbb{C})$ so that $uF_1 =F_2$, Then for boundary components with $\mu=0$, we can cap it by a disk to remove the boundary(and the bundle can be easily extend in this case). For two boundary components $C_1 ,C_2$ with $\mu (C_1 ), \mu (C_2)\neq 0$, we could find a pair of points $c_i\in C_i$ so that $u$ has the same value at $c_i$. Then we could pick a path connecting $c_1$ and $c_2$, cut $\Sigma$ along this path, and set $u$ to be constant on this path and we obtain a new compact Riemann surface with one boundary component less and with the same Maslov index. With these operations, we could finally obtain a compact Riemann surface $\Sigma$ with no boundary components or $\partial\Sigma$ is connected. In the latter case, the conclusion follows obviously from the fact that two loops in $\mathcal{R} (n)$ are homotopic if and only if they have the same Maslov index. For the first case, it follows from the fact that two line bundles over $\Sigma$ are isomorphic if and only if they have the same first Chern class.</p>
     </body>
 </article>
