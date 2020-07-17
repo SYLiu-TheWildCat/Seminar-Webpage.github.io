@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+    TeX:{
+        equationNumbers: {autoNumber: "AMS" },
+        Macros: {
+            im: "{\\mathrm {im}}",
+            dvol: "{\\mathrm {dvol}}",
+            index: "{\\mathrm {index}}",
+            Hom: "{\\mathrm {Hom}}",
+            diff: "{\\mathrm {d}}",
+            iIm: "{\\mathrm {Im}}",
+            End: "{\\mathrm {End}}",
+            Ind:"{\\mathrm {Ind}}",
+        },
+        "HTML-CSS" : {
+            availableFonts : ["STIX"],
+            preferredFont : "STIX",
+            webFont : "STIX-web",
+            imageFont : null
+        },
+},
+tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});</script>
+    <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <!-- <script>
+        document.getElementById('counter').innerHTML = i;
+    </script> -->
+    <link rel="stylesheet" type="text/css" href="foootnote.css">
+    <link rel="stylesheet" type="text/css" href="article.css">
+    <style>
+        div.s.theorem::before{
+            content: "4." counter(statement) "." "Theorem";
+        }
+        div.s.definition::before{
+            content: "4." counter(statement) "." "Definition";
+        }
+        div.s.lemma::before{
+            content: "4." counter(statement) "." "Lemma";
+        }
+        div.s.remark::before{
+            content: "4." counter(statement) "." "Remark";
+        }
+        div.s.crl::before{
+            content: "4." counter(statement) "." "Corollary";
+        }
+        div.s.prp::before{
+            content: "4." counter(statement) "." "Proposition";
+        }
+        h2.section::before{
+            content: "4" counter(sec,lower-alpha)")";
+        }
+    </style>
+</head>
+<article>
+<div class="sidenav">
+    <a href="#4a">4a) Proof of the Second Part</a>
+    <a href="seminar-Riemann-Roch.html">Back to Homepage</a></div>
+    <body>
+        <h1>&#8547. Proof of the Riemann-Roch Theorem</h1>
+        <p>In this series we are going to finish the seminar, to state the rest of the proof toward the Riemann-Roch theorem. Recall that we have shown in series <a href="2.EllipticEstimate.html">&#8545</a> the analytical part of the proof, and now we are going to compute explicitly the Fredholm index of the operator $D_F$, and to relate it to our boundary Maslov index.</p>
+
+        <h2 class="section" id="4a">Proof of the Second Part</h2> In order to prove the second part, we apply again the pair-of-pants induction and reduce to the computation on the disk $\mathbb{D}^2$. This computation is given in the following lemma. 
+
+        <p><div class="s lemma"></div>Theorem <a href="1.Introduction.html#generalized-Riemann-Roch">1.12</a> holds in the case $\Sigma =\mathbb{D}^2$ is a closed unit disk and $D_F$ is complex linear.</p>
+    </body>
+</article>
