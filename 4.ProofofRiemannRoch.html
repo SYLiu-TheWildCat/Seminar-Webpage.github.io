@@ -14,6 +14,7 @@
             iIm: "{\\mathrm {Im}}",
             End: "{\\mathrm {End}}",
             Ind:"{\\mathrm {Ind}}",
+            coker: "{\\mathrm {coker}}",
         },
         "HTML-CSS" : {
             availableFonts : ["STIX"],
@@ -71,5 +72,51 @@ tex2jax: {
         <h2 class="section" id="4a">Proof of the Second Part</h2> In order to prove the second part, we apply again the pair-of-pants induction and reduce to the computation on the disk $\mathbb{D}^2$. This computation is given in the following lemma. 
 
         <p><div class="s lemma"></div>Theorem <a href="1.Introduction.html#generalized-Riemann-Roch">1.12</a> holds in the case $\Sigma =\mathbb{D}^2$ is a closed unit disk and $D_F$ is complex linear.</p>
+
+        <p class="proof">Again, we can reduce to the case when $E$ is a trivial complex line bundle and $F_z =e^{ik\theta /2}\mathbb{R}$. From the first statement of generalized Riemann-Roch theorem, we only need to prove this in the case $X_F =W^{1,2}_F (\mathbb{D} ,\mathbb{C} $ and $Y=L^2 (\mathbb{D},T^{0,1}\Sigma\otimes\mathbb{C} )$. Then there is a canonical Cauchy-Riemann operator $D_F$ written as
+            \[
+            D_F\xi =\frac{1}{2} (\partial_s\xi +i\partial_t\xi )(\diff s-i\diff t).
+            \]
+            We prove the theorem for this $D_F$ first.<br>
+            Let's begin by computing the kernel of $D_F$. If $\xi\in X_F$ such that $D_F\xi =\bar{\partial }\xi =0$, then $\xi$ is holomorphic on $\mathbb{D}$ and hence we can expand $\xi$ near $0$ as the power series
+            \[
+            \xi =\sum_{n=0}^{\infty}a_n z^n ,
+            \]
+            and in order to satisfy the boundary condition, we must have $\xi (e^{i\theta } )e^{-ik\theta } =\overline{\xi (e^{i\theta })}$. Using Fourier expansion, we have
+            \[
+            a_n =\lim_{r\to 1}\frac{1}{2\pi }\int_0^1 \xi (re^{i\theta })e^{-in\theta }\diff\theta =\frac{1}{2\pi }\int_0^1\xi (e^{i\theta} )e^{in\theta }\diff\theta .
+            \]
+            Hence
+            \[
+            a_{k-n} =\int_0^1 \xi (e^{i\theta })e^{-ik\theta } e^{in\theta }\diff\theta =\bar{a}_n.
+            \]
+            Since we know that $a_s=0$ for $s< 0$, it follows that $a_n =0$ when $n> k$ and $n < 0$. This implies that for $k\leq -1$, $D_F$ is injective and for $k\geq 0$, $\dim\ker D_F =k+1$. <br>
+            Then we want to compute the cokernel of $D_F$, i.e. the orthogonal complement of the image of $D_F$. For this, from (i) in theorem <a href="1.Introduction.html#generalized-Riemann-Roch">1.12</a> we know that the cokernel consists of those $\zeta\diff\bar{z}$ with $\partial\zeta =\partial_s\zeta -i\partial_t\zeta =0$, and if $\xi\in X_F$ and $\partial\zeta =0$, then
+            \[
+            \begin{aligned}
+            \int_{\mathbb{D}}\langle\zeta\diff\bar{z} ,D_F\xi\rangle &=\mathrm{Re}\int_{\mathbb{D} }\bar{\zeta} (\partial_s\xi +i\partial_t\xi )\diff s\diff t+\int_{\mathbb{D} }\overline{(\partial_s\zeta -i\partial_t\zeta )}\xi\diff s\diff t\\
+            &=\mathrm{Re}\int_{\mathbb{D} }(\partial_s (\bar{\zeta }\xi )+i\partial_t (\bar{\zeta}\xi ))\diff s\diff t =\mathrm{Re}\int_0^{2\pi }e^{i\theta }\overline{\zeta (e^{i\theta })}\xi (e^{i\theta })\diff\theta,
+            \end{aligned}
+            \]
+            and hence this integral vanishes if and only if $\zeta $ has the boundary condition $\zeta (e^{i\theta } )\in ie^{i\theta +ik\theta /2}\mathbb{R} $. We could then conclude via Fourier expansion that, if $k\geq -1$, then $D_F$ is surjective, and if $k\leq -2$, then
+            \[
+            \dim\coker D_F =-k-1. 
+            \]
+            Finally, for an arbitrary Cauchy-Riemann operator, we know that it is gauge equivalent to $\bar{\partial }$, what we have studied above. Hence by compactness, we have the same conclusion for $D_F$ as $\bar{\partial }$. 
+        </p>
+
+        <p>In order to give a proof in the general case, we just apply the pair-of-pants induction, so it suffices for us to show that the Fredholm index of $D_F$ is also additive for the composition. Let $\Sigma_{02} =\Sigma_{01}\cup\Sigma_{12}$ be a decomposition of compact Riemann surfaces, we set
+            \[
+            X_{ij} =W^{1,2}_F (\Sigma_{ij} ,E_{ij}), Y_{ij} =L^2 (\Sigma_{ij} ,E_{ij}),
+            \]
+            where $E_{ij} =E\vert_{\Sigma_{ij}}$ and $F_{ij}$ is the corresponding totally real subbundle. Let $\Gamma_0 ,\Gamma_1$ and $\Gamma_2$ be disjoint part of the boundaries of $\Sigma_{ij}$ such that $\partial\Sigma_{01} =\Gamma_0\cup\Gamma_1$, $\Sigma_{12} =\Gamma_1\cup\Gamma_2$ and $\Sigma_{02} =\Gamma_0\cup\Gamma_2 $. Let $F_i$ be the restriction of $F_{ij}$ to $\Gamma_i$, and write $D_{ij}$ be the restriction of $D$ to the subspace $X_{ij}$. Then our conclusion would be
+        </p>
+
+        <p><div class="s lemma"></div>The Fredholm indices of $D_{ij}$ satisfy the following identity:
+        \[
+    \Ind (D_{02} )=\Ind (D_{01} )+\Ind (D_{12} ). 
+\]</p>
+
+<h2 class="section">Proof of the Third Part</h2> Now we proceed to complete the proof of the generalized Riemann-Roch theorem. It remains for us to show that in certain cases the operator $D_F$ is injective or surjective. In order to do this, we glue any compact Riemann surface $\Sigma$ along the boundary $\partial\Sigma$ to obtain a closed Riemann surface $\tilde{\Sigma}$, and the boundary Maslov index is then translated into the first Chern number $\langle c_1 (\tilde{\Sigma }),[\tilde{\Sigma }]\rangle $. Recall that this Chern number represents the (signed count of the) number of zeros that any holomorphic section of the bundle $\tilde{E}\to\tilde{\Sigma}$ would have, and hence $c_1 < 0$ just implies that the kernel is trivial. For the dual argument, we apply the Serre duality theorem and then this reduces to the same discussion on the complex vector bundle $T^{1,0}\Sigma\otimes E^{\ast}$.
     </body>
 </article>
